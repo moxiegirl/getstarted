@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Get Started with Docker</title>
+      <link>http://localhost:1313/started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/started/</guid>
+      <description>
+
+&lt;h1 id=&#34;get-started-with-docker:646c5a81bf7a5ae7b0905b92472cac0a&#34;&gt;Get Started with Docker&lt;/h1&gt;
+
+&lt;p&gt;This tutorial introduces fundamental Docker features by walking you through some
+simple tasks. These tasks include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;installing Docker&lt;/li&gt;
+&lt;li&gt;running a software image in a container&lt;/li&gt;
+&lt;li&gt;browsing for an image on Docker Hub&lt;/li&gt;
+&lt;li&gt;creating your own image and running it in a container&lt;/li&gt;
+&lt;li&gt;creating a Docker Hub account and repository&lt;/li&gt;
+&lt;li&gt;pushing your image to Docker Hub for others to use&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While Docker has a graphical interface called Kitematic, this
+tutorial uses the command line which is available on every major distribution.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-1-install-docker:646c5a81bf7a5ae7b0905b92472cac0a&#34;&gt;Step 1: Install docker&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Log into your Ubuntu installation as a user with &lt;code&gt;sudo&lt;/code&gt; privileges.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Verify that you have &lt;code&gt;wget&lt;/code&gt; installed.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ which wget
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If &lt;code&gt;wget&lt;/code&gt; isn&amp;rsquo;t installed, install it after updating your manager:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get update
+$ sudo apt-get install wget
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Get the latest Docker package.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wget -qO- https://get.docker.com/ | sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The system prompts you for your &lt;code&gt;sudo&lt;/code&gt; password. Then, it downloads and
+installs Docker and its dependencies.
+&amp;gt;&lt;strong&gt;Note&lt;/strong&gt;: If your company is behind a filtering proxy, you may find that the
+&amp;gt;&lt;code&gt;apt-key&lt;/code&gt;
+&amp;gt;command fails for the Docker repo during installation. To work around this,
+&amp;gt;add the key directly using the following:
+&amp;gt;
+&amp;gt;       $ wget -qO- &lt;a href=&#34;https://get.docker.com/gpg&#34;&gt;https://get.docker.com/gpg&lt;/a&gt; | sudo apt-key add -&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Verify &lt;code&gt;docker&lt;/code&gt; is installed correctly.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run hello-world
+Unable to find image &#39;hello-world:latest&#39; locally
+511136ea3c5a: Pull complete
+31cbccb51277: Pull complete
+e45a5af57b00: Pull complete
+hello-world:latest: The image you are pulling has been verified.
+Important: image verification is a tech preview feature and should not be
+relied on to provide security.
+Status: Downloaded newer image for hello-world:latest
+Hello from Docker.
+This message shows that your installation appears to be working correctly.
+
+
+To generate this message, Docker took the following steps:
+1. The Docker client contacted the Docker daemon.
+2. The Docker daemon pulled the &amp;quot;hello-world&amp;quot; image from the Docker Hub.
+     (Assuming it was not already locally available.)
+3. The Docker daemon created a new container from that image which runs the
+     executable that produces the output you are currently reading.
+4. The Docker daemon streamed that output to the Docker client, which sent it
+     to your terminal.
+
+
+To try something more ambitious, you can run an Ubuntu container with:
+$ docker run -it ubuntu bash
+
+
+For more examples and ideas, visit:
+http://docs.docker.com/userguide/
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This command downloads a test image and runs it in a container.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-2-understand-images-and-containers:646c5a81bf7a5ae7b0905b92472cac0a&#34;&gt;Step 2: Understand images and containers&lt;/h2&gt;
+
+&lt;p&gt;As the last step in your installation, your ran the &lt;code&gt;docker run&lt;/code&gt; command. With this one command, you just completed three core tasks to working with Docker. The command you ran had three parts.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://localhost:1313/img/container_explainer.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;A &lt;em&gt;container&lt;/em&gt; is a stripped-to-basics version of a Linux operating system. An &lt;em&gt;image&lt;/em&gt; is software you load into a container. When you ran the command, the Docker software:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;checked to see if you had the hello-world software image&lt;/li&gt;
+&lt;li&gt;dowloaded the image from the Docker Hub (more about this later)&lt;/li&gt;
+&lt;li&gt;loaded the image into the container and &amp;ldquo;ran&amp;rdquo; it&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Depending on how it was built, an image might run a simple, single command and then exit. This is what &lt;code&gt;Hello-World&lt;/code&gt; did.&lt;/p&gt;
+
+&lt;p&gt;A Docker image, though, is capable of much more. An image can start software as complex as a database, wait for you (or someone else) to add data, store the data for later use, and then wait for the next person.&lt;/p&gt;
+
+&lt;p&gt;Who built the &lt;code&gt;hello-world&lt;/code&gt; software image though? In this case, Docker did but anyone can. Docker lets people (or companies) create and share software through Docker images. Using Docker, you don&amp;rsquo;t have to worry about whether your computer can run the software in an image &amp;mdash; a Docker container &lt;em&gt;can always run it&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-3-locate-the-whalesay-image:646c5a81bf7a5ae7b0905b92472cac0a&#34;&gt;Step 3: Locate the whalesay image&lt;/h2&gt;
+
+&lt;p&gt;It is very easy to create your own image. In this next section, you&amp;rsquo;ll create your own image from one already shared on the Docker Hub.  Docker Hub is Docker website where the community gathers to share software images.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Use your browser to navigate to &lt;a href=&#34;http://hub.docker.com&#34;&gt;http://hub.docker.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The hub contains images from individuals like you and official images from
+organizations like RedHat, IBM, Google, and a whole lot more.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Enter the word &lt;code&gt;whalesay&lt;/code&gt; in the search bar.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;ll see that it returns a lot of images. We want the Official Image from
+Docker.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Change the filter to show only Official Images.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Navigate to the &lt;code&gt;whalesay&lt;/code&gt; image.&lt;/p&gt;
+
+&lt;p&gt;From the repository page, you see that the image installs a famous Linux
+program called &lt;code&gt;cowsay&lt;/code&gt;. The &lt;code&gt;cowsay&lt;/code&gt; program takes a word or phrase and
+prints out an ASCII image of a cow saying that word or phrase. In the case of
+the &lt;code&gt;whalesay&lt;/code&gt; image, the Docker whale does the talking instead of a cow.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Back in your terminal, run the image in a container.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run moxiegirl/whalesay cowsay boo
+Unable to find image &#39;moxiegirl/whalesay:latest&#39; locally
+latest: Pulling from moxiegirl/whalesay
+e9e06b06e14c: Pull complete 
+a82efea989f9: Pull complete 
+37bea4ee0c81: Pull complete 
+07f8e8c5e660: Pull complete 
+676c4a1897e6: Pull complete 
+5b74edbcaa5b: Pull complete 
+1722f41ddcb5: Pull complete 
+99da72cfe067: Pull complete 
+5d5bd9951e26: Pull complete 
+fb434121fc77: Already exists 
+Digest: sha256:d6ee73f978a366cf97974115abe9c4099ed59c6f75c23d03c64446bb9cd49163
+Status: Downloaded newer image for moxiegirl/whalesay:latest
+ _____ 
+&amp;lt; boo &amp;gt;
+ ----- 
+        \
+         \
+            \     
+                                        ##        .            
+                            ## ## ##       ==            
+                     ## ## ## ##      ===            
+             /&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;___/ ===        
+    ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+             \______ o          __/            
+                \    \        __/             
+                    \____\______/   
+
+
+The first time you run a software image, the `docker` command looks for it
+on your local system. If the image isn&#39;t there, then `docker` gets it from
+the hub.
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;List the images on your local system.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+moxiegirl/whalesay   latest              fb434121fc77        3 hours ago         247 MB
+hello-world          latest              91c95931e552        5 weeks ago         910 B
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Run the &lt;code&gt;whalesay&lt;/code&gt; image again.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run moxiegirl/whalesay cowsay boo-boo
+ _________ 
+&amp;lt; boo-boo &amp;gt;
+ --------- 
+        \
+         \
+            \     
+                                        ##        .            
+                            ## ## ##       ==            
+                     ## ## ## ##      ===            
+             /&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;___/ ===        
+    ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+             \______ o          __/            
+                \    \        __/             
+                    \____\______/   
+
+
+This time `docker` found the local image and ran it for you.
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;step-4-build-your-own-image:646c5a81bf7a5ae7b0905b92472cac0a&#34;&gt;Step 4: Build your own image&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;whalesay&lt;/code&gt; image could be improved. It would be nice if you didn&amp;rsquo;t have to think of
+something to say. In this next section, you create your own software that does just that.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Create a text file called &lt;code&gt;Dockerfile&lt;/code&gt; in your current directory.&lt;/p&gt;
+
+&lt;p&gt;You can use any text editor for example, &lt;code&gt;vi&lt;/code&gt; or &lt;code&gt;nano&lt;/code&gt; to do this.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a your Dockerfile file.&lt;/p&gt;
+
+&lt;p&gt;A Dockerfile describes the software that is &amp;ldquo;baked&amp;rdquo; into an image. It isn&amp;rsquo;t
+just ingredients tho, it can tell the software what environment to use or what
+commands to run. Your recipe is going to be very short.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add a line to the file like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FROM moxiegirl/whalesay:latest
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The FROM keyword tells Docker which image your image is based on. Whalesay is cute and has the &lt;code&gt;cowsay&lt;/code&gt;
+program already, so we&amp;rsquo;ll start there.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Now, add the &lt;code&gt;fortunes&lt;/code&gt; program to the image.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;RUN apt-get -y update &amp;amp;&amp;amp; apt-get install -y fortunes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;fortunes&lt;/code&gt; program has a command that prints out wise sayings for our
+ whale to say. So, the first step is to install it. This line installs the
+ software into the image.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Once the image has the software it needs, you instruct the software to run
+when the image is loaded.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CMD /usr/games/fortune -a | cowsay
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This line tells the &lt;code&gt;fortune&lt;/code&gt; program to pass a nifty quote to the &lt;code&gt;cowsay&lt;/code&gt; program.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Check your work, your file should look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;FROM moxiegirl/whalesay:latest
+RUN apt-get -y update &amp;amp;&amp;amp; apt-get install -y fortunes
+CMD /usr/games/fortune -a | cowsay
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Save and close your Dockerfile.&lt;/p&gt;
+
+&lt;p&gt;At this point, you have all your software ingredients and behaviors described
+in a Dockerfile. You are ready to build a new image.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Build your new image.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker build -t docker-whale .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;build&lt;/code&gt; subcommand takes the Dockerfile in the current directory, and
+builds a software image. The output of the command looks really long and complex.&lt;/p&gt;
+
+&lt;p&gt;First Docker checks to make sure it has the context it needs to build.
+    Sending build context to Docker daemon 3.072 kB
+    Sending build context to Docker daemon&lt;/p&gt;
+
+&lt;p&gt;Then, Docker loads with the &lt;code&gt;whalesay&lt;/code&gt; image.   It already has this image
+locally because you just ran it. So, Docker doesn&amp;rsquo;t load it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Step 0 : FROM moxiegirl/whalesay:latest
+ ---&amp;gt; fb434121fc77
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Docker moves onto the next step which is to update the package manager&amp;rsquo;s
+list of software repositories. This takes a lot of lines, no need to list
+them all again here.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Step 1 : RUN apt-get -y update &amp;amp;&amp;amp; apt-get install -y fortunes
+ ---&amp;gt; Running in 27d224dfa5b2
+Ign http://archive.ubuntu.com trusty InRelease
+Ign http://archive.ubuntu.com trusty-updates InRelease
+Ign http://archive.ubuntu.com trusty-security InRelease
+Hit http://archive.ubuntu.com trusty Release.gpg
+....snip...
+Get:15 http://archive.ubuntu.com trusty-security/restricted amd64 Packages [14.8 kB]
+Get:16 http://archive.ubuntu.com trusty-security/universe amd64 Packages [134 kB]
+Reading package lists...
+---&amp;gt; eb06e47a01d2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then, Docker installs the new &lt;code&gt;fortunes&lt;/code&gt; software.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Removing intermediate container e2a84b5f390f
+Step 2 : RUN apt-get install -y fortunes
+ ---&amp;gt; Running in 23aa52c1897c
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+    fortune-mod fortunes-min librecode0
+Suggested packages:
+    x11-utils bsdmainutils
+The following NEW packages will be installed:
+    fortune-mod fortunes fortunes-min librecode0
+0 upgraded, 4 newly installed, 0 to remove and 3 not upgraded.
+Need to get 1961 kB of archives.
+After this operation, 4817 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main librecode0 amd64 3.6-21 [771 kB]
+...snip......
+Setting up fortunes (1:1.99.1-7) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+ ---&amp;gt; c81071adeeb5
+Removing intermediate container 23aa52c1897c
+Step 3 : CMD /usr/games/fortune -a | cowsay
+ ---&amp;gt; Running in a8e6faa88df3
+ ---&amp;gt; 7d9495d03763
+Removing intermediate container a8e6faa88df3
+Successfully built 7d9495d03763
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, Docker runs the last command and finishes the build.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Step 3 : CMD /usr/games/fortune -a | cowsay
+ ---&amp;gt; Running in a8e6faa88df3
+ ---&amp;gt; 7d9495d03763
+Removing intermediate container a8e6faa88df3
+Successfully built 7d9495d03763
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;List your new image to make sure you have it locally.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+docker-whale         latest              7d9495d03763        4 minutes ago       273.7 MB
+moxiegirl/whalesay   latest              fb434121fc77        4 hours ago         247 MB
+hello-world          latest              91c95931e552        5 weeks ago         910 B
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Run your new image.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run docker-whale
+ _________________________________________ 
+/ &amp;quot;He was a modest, good-humored boy. It  \
+\ was Oxford that made him insufferable.&amp;quot; /
+ ----------------------------------------- 
+        \
+         \
+            \     
+                                        ##        .            
+                            ## ## ##       ==            
+                     ## ## ## ##      ===            
+             /&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;___/ ===        
+    ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+             \______ o          __/            
+                \    \        __/             
+                    \____\______/   
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, you&amp;rsquo;ve made the whale a lot smarter.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;step-5-create-a-docker-hub-account-and-repository:646c5a81bf7a5ae7b0905b92472cac0a&#34;&gt;Step 5: Create a Docker Hub account and repository&lt;/h2&gt;
+
+&lt;p&gt;You&amp;rsquo;ve built something really cool, you should share it. In this next section,
+you&amp;rsquo;ll do just that. You&amp;rsquo;ll need a Docker Hub account. Then, you&amp;rsquo;ll push your
+image up to it so other people with Docker can run it.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Use your browser to navigate to &lt;a href=&#34;https://hub.docker.com/account/signup/&#34;&gt;https://hub.docker.com/account/signup/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Your browser displays the Hub signup page.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Fill out the form on the signup page.&lt;/p&gt;
+
+&lt;p&gt;Docker Hub is free. We do need a name, password, and email address.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Press &lt;strong&gt;Signup&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The browser displays the welcome to DockerHub page&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Before you can share anything on the hub, you need to verify your email address.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Go to your email box and look for the email titled &lt;code&gt;Please confirm email for your Docker Hub account&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open the emai.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Press the &lt;strong&gt;Confirm Your Email&lt;/strong&gt; button.&lt;/p&gt;
+
+&lt;p&gt;The browser opens Docker Hub to your profile page.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Choose *&lt;em&gt;Add Repository&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The browser opens the &lt;strong&gt;Add Repository&lt;/strong&gt; page.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Fill out the form.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://localhost:1313/img/add_repository.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Press &lt;strong&gt;Add Repository&lt;/strong&gt; when you are done.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Docker Hub creates your new repository.
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;step-6-tag-and-push-your-image:646c5a81bf7a5ae7b0905b92472cac0a&#34;&gt;Step 6: Tag and push your image&lt;/h2&gt;
+
+&lt;p&gt;In this section, you tag and push your &lt;code&gt;docker-whale&lt;/code&gt; image.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Go back to your terminal.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;List the images you currently have:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;REPOSITORY           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+docker-whale         latest              7d9495d03763        38 minutes ago      273.7 MB
+&amp;lt;none&amp;gt;               &amp;lt;none&amp;gt;              5dac217f722c        45 minutes ago      273.7 MB
+moxiegirl/whalesay   latest              fb434121fc77        4 hours ago         247 MB
+hello-world          latest              91c95931e552        5 weeks ago         910 B
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Find the &lt;code&gt;IMAGE ID&lt;/code&gt; for your &lt;code&gt;docker-whale&lt;/code&gt; image.&lt;/p&gt;
+
+&lt;p&gt;In this example, the id is &lt;code&gt;7d9495d03763&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;ll notice that currently, the &lt;code&gt;REPOSITORY&lt;/code&gt; shows the repository but not
+the namespace for &lt;code&gt;docker-whale&lt;/code&gt;. You need to include the &lt;code&gt;namespace&lt;/code&gt; for
+Docker Hub to associate it with your account.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Tag your &lt;code&gt;docker-whale&lt;/code&gt; image.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker tag 7d9495d03763 maryatdocker/docker-whale:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;List your images again to see your tag.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY                  TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+maryatdocker/docker-whale   latest              7d9495d03763        About an hour ago   273.7 MB
+docker-whale                latest              7d9495d03763        About an hour ago   273.7 MB
+&amp;lt;none&amp;gt;                      &amp;lt;none&amp;gt;              5dac217f722c        About an hour ago   273.7 MB
+moxiegirl/whalesay          latest              fb434121fc77        5 hours ago         247 MB
+hello-world                 latest              91c95931e552        5 weeks ago         910 B
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Push your image to your new repository.&lt;/p&gt;
+
+&lt;p&gt;Docker prompts you to enter your username/password/email for Docker Hub.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker push maryatdocker/docker-whale
+    The push refers to a repository [maryatdocker/docker-whale] (len: 1)
+    7d9495d03763: Image push failed 
+
+
+    Please login prior to push:
+    Username: maryatdocker
+    Password: 
+    Email: mary@docker.com
+    WARNING: login credentials saved in /Users/mary/.dockercfg.
+    Login Succeeded
+    The push refers to a repository [maryatdocker/docker-whale] (len: 1)
+    7d9495d03763: Image already exists 
+    c81071adeeb5: Image successfully pushed 
+    eb06e47a01d2: Image successfully pushed 
+    fb434121fc77: Image successfully pushed 
+    5d5bd9951e26: Image successfully pushed 
+    99da72cfe067: Image successfully pushed 
+    1722f41ddcb5: Image successfully pushed 
+    5b74edbcaa5b: Image successfully pushed 
+    676c4a1897e6: Image successfully pushed 
+    07f8e8c5e660: Image successfully pushed 
+    37bea4ee0c81: Image successfully pushed 
+    a82efea989f9: Image successfully pushed 
+    e9e06b06e14c: Image successfully pushed 
+    Digest: sha256:ad89e88beb7dc73bf55d456e2c600e0a39dd6c9500d7cd8d1025626c4b985011
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Return to your profile on Docker Hub to see your new image.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://localhost:1313/img/new_image.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;step-8-test-your-new-image:646c5a81bf7a5ae7b0905b92472cac0a&#34;&gt;Step 8: Test your new image&lt;/h2&gt;
+
+&lt;p&gt;In this last section, you&amp;rsquo;ll pull the image you just pushed to hub.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;List the images you have.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY                  TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+maryatdocker/docker-whale   latest              7d9495d03763        About an hour ago   273.7 MB
+docker-whale                latest              7d9495d03763        About an hour ago   273.7 MB
+&amp;lt;none&amp;gt;                      &amp;lt;none&amp;gt;              5dac217f722c        About an hour ago   273.7 MB
+moxiegirl/whalesay          latest              fb434121fc77        5 hours ago         247 MB
+ubuntu                      latest              07f8e8c5e660        3 weeks ago         188.3 MB
+hello-world                 latest              91c95931e552        5 weeks ago         910 B
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Remove the two &lt;code&gt;docker-whale&lt;/code&gt; images.&lt;/p&gt;
+
+&lt;p&gt;You can use an ID or the name to remove an image.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker rmi 7d9495d03763
+$ docker rmi docker-whale
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Run the image you just pushed in a container.&lt;/p&gt;
+
+&lt;p&gt;Since the image is no longer available on your local system, Docker downloads it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run maryatdocker/docker-whale
+Unable to find image &#39;maryatdocker/docker-whale:latest&#39; locally
+latest: Pulling from maryatdocker/docker-whale
+eb06e47a01d2: Pull complete 
+c81071adeeb5: Pull complete 
+7d9495d03763: Already exists 
+e9e06b06e14c: Already exists 
+a82efea989f9: Already exists 
+37bea4ee0c81: Already exists 
+07f8e8c5e660: Already exists 
+676c4a1897e6: Already exists 
+5b74edbcaa5b: Already exists 
+1722f41ddcb5: Already exists 
+99da72cfe067: Already exists 
+5d5bd9951e26: Already exists 
+fb434121fc77: Already exists 
+Digest: sha256:ad89e88beb7dc73bf55d456e2c600e0a39dd6c9500d7cd8d1025626c4b985011
+Status: Downloaded newer image for maryatdocker/docker-whale:latest
+ ________________________________________ 
+/ Having wandered helplessly into a      \
+| blinding snowstorm Sam was greatly     |
+| relieved to see a sturdy Saint Bernard |
+| dog bounding toward him with the       |
+| traditional keg of brandy strapped to  |
+| his collar.                            |
+|                                        |
+| &amp;quot;At last,&amp;quot; cried Sam, &amp;quot;man&#39;s best      |
+\ friend -- and a great big dog, too!&amp;quot;   /
+ ---------------------------------------- 
+        \
+         \
+            \     
+                                        ##        .            
+                            ## ## ##       ==            
+                     ## ## ## ##      ===            
+             /&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;___/ ===        
+    ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+             \______ o          __/            
+                \    \        __/             
+                    \____\______/   
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;where-to-go-next:646c5a81bf7a5ae7b0905b92472cac0a&#34;&gt;Where to go next&lt;/h2&gt;
+
+&lt;p&gt;You&amp;rsquo;ve completed the Docker Getting Started tutorial. You&amp;rsquo;ve done a lot, you&amp;rsquo;ve:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;installed Docker&lt;/li&gt;
+&lt;li&gt;run a software image in a container&lt;/li&gt;
+&lt;li&gt;located an interesting image on Docker Hub&lt;/li&gt;
+&lt;li&gt;run the image on your own machine&lt;/li&gt;
+&lt;li&gt;modified an image to create your own and run it&lt;/li&gt;
+&lt;li&gt;create a Docker Hub account and repository&lt;/li&gt;
+&lt;li&gt;pushed your image to Docker Hub for others to share&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You&amp;rsquo;ve only scratched the surface of what Docker can do. To learn more, go onto
+to view the  &lt;a href=&#34;http://docs.docker.com&#34;&gt;Docker User Guide&lt;/a&gt; in our documentation.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
