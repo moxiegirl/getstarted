@@ -31,8 +31,10 @@ RUN mv hugo_${HUGO_VERSION}_linux_amd64/hugo_${HUGO_VERSION}_linux_amd64 /usr/lo
 #######################
 # Copy the content and theme to the container
 #######################
+
 WORKDIR /docs
-COPY . /docs
+COPY . /docs/
+RUN ls -R /docs
 
 EXPOSE 8000
 
