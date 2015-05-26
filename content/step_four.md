@@ -1,5 +1,5 @@
 +++
-title = "Locate and run the whalesay image "
+title = "Build your own image"
 description = "Compose CLI reference"
 keywords = ["fig, composition, compose, docker, orchestration, cli,  reference"]
 [menu.main]
