@@ -1,3 +1,4 @@
+#
 # See the top level Makefile in https://github.com/docker/docker for usage.
 #
 FROM debian:jessie
@@ -32,4 +33,8 @@ COPY . /docs
 
 EXPOSE 8000
 
-CMD hugo server -t hugo-bootswatch -w
+
+
+
+
+
