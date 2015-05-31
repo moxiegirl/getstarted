@@ -23,7 +23,7 @@ RUN apt-get update \
 # TODO: Test to see if the above holds true
 RUN pip install awscli==1.4.4 pyopenssl==0.12
 
-ENV HUGO_VERSION 0.13
+ENV HUGO_VERSION 0.14
 RUN wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux_amd64.tar.gz
 RUN tar -zxvf hugo_${HUGO_VERSION}_linux_amd64.tar.gz
 RUN mv hugo_${HUGO_VERSION}_linux_amd64/hugo_${HUGO_VERSION}_linux_amd64 /usr/local/bin/hugo
