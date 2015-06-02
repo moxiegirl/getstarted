@@ -1,5 +1,5 @@
 +++
-title = "Create a Docker Hub account and repository "
+title = "Create a Docker Hub account & repository "
 description = "Compose CLI reference"
 keywords = ["fig, composition, compose, docker, orchestration, cli,  reference"]
 [menu.mac]
@@ -7,42 +7,62 @@ identifier = "mac_hub"
 weight = 5
 +++
 
-# Step 5: Create a Docker Hub account and repository
+# Create a Docker Hub account & repository
 
 You've built something really cool, you should share it. In this next section,
 you'll do just that. You'll need a Docker Hub account. Then, you'll push your
 image up to it so other people with Docker can run it.
 
-1. Use your browser to navigate to [https://hub.docker.com/account/signup/](https://hub.docker.com/account/signup/).
+
+## Step 1: Sign up for an account
+
+1. Use your browser to navigate to <a href="https://hub.docker.com/account/signup/" target="_blank">Docker Hub signup page</a>.
 	
 	Your browser displays the Hub signup page.
+	
+	  ![Hub signup](/mac/images/hub_signup.png)
 
 2. Fill out the form on the signup page.
 
-	Docker Hub is free. We do need a name, password, and email address.
+	Docker Hub is free. Docker does need a name, password, and email address.
 		
 3. Press **Signup**.
 
-	The browser displays the welcome to DockerHub page
+	The browser displays the welcome to Docker Hub page.
 	
-4. Before you can share anything on the hub, you need to verify your email address.
 
-5. Go to your email box and look for the email titled `Please confirm email for your Docker Hub account`.
+## Step 2: Verify your email and add a repository
+	
+Before you can share anything on the hub, you need to verify your email address.
 
-6. Open the emai.
+1. Open your email inbox.
 
-7. Press the **Confirm Your Email** button.
+2. Look for the email titled `Please confirm email for your Docker Hub account`.
+
+  If you don't see the email, check your Spam folder or wait a moment for the email to arrive.
+
+2. Open the email and click the **Confirm Your Email** button.
 
 	 The browser opens Docker Hub to your profile page.
 	 
-8. Choose **Add Repository*.
+4. Choose **Add Repository**.
 
 	The browser opens the **Add Repository** page.
 	
-9. Fill out the form.
+5. Leave the Namespace alone but enter a repository name and description.
+
+6. Make sure you are creating a **Public** repository.
+
+  When you are done, your form should look similar to the following:
 
 	{{< figure src="/img/add_repository.png" >}}
 
-10. Press **Add Repository** when you are done.
+6. Press **Add Repository** when you are done.
 
 		Docker Hub creates your new repository.
+		
+## Where to go next
+
+On this page, you opened an account on Docker Hub and created a new repository.
+In the next section, you populate the repository [by tagging and pushing the
+image you created earlier](/mac/step_six).

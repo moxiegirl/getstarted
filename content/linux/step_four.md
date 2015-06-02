@@ -7,7 +7,7 @@ identifier = "linux_image"
 weight = 4
 +++
 
-# Step 4: Build your own image
+# Build your own image
 
 The `whalesay` image could be improved. It would be nice if you didn't have to think of
 something to say. In this next section, you create your own software that does just that.

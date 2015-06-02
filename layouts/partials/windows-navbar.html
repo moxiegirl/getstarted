@@ -47,7 +47,7 @@
     <div class="side-menu-container">
         <ul class="nav navbar-nav">
 					{{ $currentNode := . }}
-          {{ range .Site.Menus.main }}
+          {{ range .Site.Menus.windows }}
           {{ if .HasChildren }}
             <!-- Dropdown-->
             <li class="panel panel-default{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}" id="dropdown">

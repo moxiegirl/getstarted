@@ -6,20 +6,23 @@ keywords = ["fig, composition, compose, docker, orchestration, cli,  reference"]
 identifier = "linux_getstarted"
 +++
 
-# Get Started with Docker
+# Get Started with Docker on Linux
 
-This tutorial introduces fundamental Docker features by walking you through some
-simple tasks. These tasks include:
+This tutorial is intended for users on Linux systems such as Ubuntu. Not your operating system? **You can choose the tutorial for [Mac OS X](/mac/started) or [Windows](/windows/started)**.
 
-* installing Docker
-* running a software image in a container
-* browsing for an image on Docker Hub
-* creating your own image and running it in a container
-* creating a Docker Hub account and repository
-* pushing your image to Docker Hub for others to use
+This tutorial introduces fundamental Docker features by guiding you through some
+simple tasks. It takes approximately 30 minutes to complete. You'll learn how to:
 
-While Docker has a graphical interface called Kitematic, this
-tutorial uses the command line which is available on every major distribution.
+* install Docker
+* run a software image in a container
+* browse for an image on Docker Hub
+* create your own image and run it in a container
+* create a Docker Hub account and an image repository
+* create an image of your own
+* push your image to Docker Hub for others to use
+
+While Docker has a graphical interface called Kitematic, this tutorial uses the
+command line which is available on each of Docker's major distribution.
 
 
 
