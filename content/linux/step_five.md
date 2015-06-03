@@ -1,7 +1,7 @@
 +++
 title = "Create a Docker Hub account and repository "
-description = "Compose CLI reference"
-keywords = ["fig, composition, compose, docker, orchestration, cli,  reference"]
+description = "Getting started with Docker"
+keywords = ["beginner, tutorial, Docker"]
 [menu.linux]
 identifier = "linux_hub"
 weight = 5

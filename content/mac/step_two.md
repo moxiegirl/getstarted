@@ -1,7 +1,7 @@
 +++
 title = "Understand images & containers"
-description = "Compose CLI reference"
-keywords = ["fig, composition, compose, docker, orchestration, cli,  reference"]
+description = "Getting started with Docker"
+keywords = ["beginner, getting started, Docker"]
 [menu.mac]
 identifier = "mac_understand"
 weight = 2
@@ -9,7 +9,7 @@ weight = 2
 
 #  Learn about images & containers
 
-As the last step in your installation, your ran the `docker run hello-world` command. With this one command, you just completed three core tasks to using  Docker. The command you ran had three parts.
+As the last step in your installation, you ran the `docker run hello-world` command. With this one command, you completed the core tasks to using  Docker. The command you ran had three parts.
 
 {{< figure src="/img/container_explainer.png" >}}
 
@@ -23,7 +23,7 @@ Depending on how it was built, an image might run a simple, single command and t
 
 A Docker image, though, is capable of much more. An image can start software as complex as a database, wait for you (or someone else) to add data, store the data for later use, and then wait for the next person.
 
-Who built the `hello-world` software image though? In this case, Docker did but anyone can. Docker lets people (or companies) create and share software through Docker images. Using Docker, you don't have to worry about whether your computer can run the software in an image &mdash; a Docker container *can always run it*. 
+Who built the `hello-world` software image though? In this case, Docker did but anyone can. Docker lets people (or companies) create and share software through Docker images. Using Docker, you don't have to worry about whether your computer can run the software in a Docker image &mdash; a Docker container *can always run it*. 
 
 ## Where to go next
 

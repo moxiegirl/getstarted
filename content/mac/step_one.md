@@ -1,6 +1,6 @@
 +++
 title = "Install Docker on OS X"
-description = "Compose CLI reference"
+description = "Getting started with Docker"
 keywords = ["install, demo, Docker, OS X"]
 [menu.mac]
 identifier = "mac_install"
@@ -9,10 +9,10 @@ weight = 1
 
 # Install Docker Mac OS X
 
-Because the Docker daemon uses Linux-specific kernel features, you can't run
-Docker natively in OS X. Instead, you must install the Boot2Docker application.
-The application includes a VirtualBox Virtual Machine (VM), Docker itself, and
-the Boot2Docker management tool.
+Because Docker relies on Linux-specific features, you can't run Docker natively
+in OS X. Instead, you must install the Boot2Docker application. The application
+installs a VirtualBox Virtual Machine (VM), Docker itself, and the Boot2Docker
+management tool. These three things allow you to run Docker on Mac OS X.
 
 ## Step 1: Check your version
 
@@ -27,31 +27,11 @@ To find out what version of the OS you have:
 
 2. If you have the correct version, go to the next step.
 
-## Step 2. Learn some key concepts
-
-In a Docker installation on Linux, your machine is both the localhost and the
-Docker host. In networking, localhost means your computer. The Docker host is
-the machine on which the containers run.
-
-On a typical Linux installation, the Docker client, the Docker daemon, and any
-containers run directly on your localhost. This means you can address ports on a
-Docker container using standard localhost addressing such as `localhost:8000` or
-`0.0.0.0:8376`.
-
-![Linux Architecture Diagram](/mac/images/linux_docker_host.svg)
-
-In an OS X installation, the `docker` daemon is running inside a Linux virtual
-machine provided by Boot2Docker.
-
-![OSX Architecture Diagram](/mac/images/mac_docker_host.svg)
-
-In OS X, the Docker host address is the address of the Linux VM. When you start
-the `boot2docker` process, the VM is assigned an IP address. Under `boot2docker`
-ports on a container map to ports on the VM. To see this in practice, work
-through the exercises on this page.
+    If you aren't using a supported version, you could consider upgrading your
+    operating system.
 
 
-## Step 3: Install Boot2Docker
+## Step 2: Install Boot2Docker
 
 1. Go to the <a href="https://github.com/boot2docker/osx-installer/releases/latest" target="_blank">boot2docker/osx-installer</a> release page.
 
@@ -59,7 +39,8 @@ through the exercises on this page.
     
 2. Download Boot2Docker by clicking `Boot2Docker-x.x.x.pkg` in the **Downloads** section.
    
-    The system copies the download to your machine. It can take about a minute.
+	  The browser downloads the package to your machine. It can take about a
+    minute.
 
 3. Open the downloaded package file.
 
@@ -74,7 +55,8 @@ through the exercises on this page.
 
 4. Press **Continue** and then **Install**.
 
-    Your system might warn you about the installer.  
+	  Accept all the installer defaults. Your system might warn you about the
+   installer.  
     
     ![Installer](/mac/images/install_software.png)
     
@@ -90,7 +72,7 @@ through the exercises on this page.
 ## Step 4. Verify your installation
 
 The installer places Boot2Docker and VirtualBox in your **Applications** folder.
-In this step, you start the Boot2Docker and run a simple Docker command.
+In this step, you start Boot2Docker and run a simple Docker command.
 
 1. Open the **Launchpad** and locate the Boot2Docker icon.
 
@@ -121,7 +103,7 @@ In this step, you start the Boot2Docker and run a simple Docker command.
 
 3.  Click your mouse in the terminal window to make it active.
 
-4. Enter the `docker run hello-world` commmand.
+4. Type the `docker run hello-world` commmand and press RETURN.
 
     The command does some work for you, if everything runs well, the command's
     output looks like this:

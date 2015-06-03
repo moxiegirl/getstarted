@@ -1,7 +1,7 @@
 +++
 title = "Create a Docker Hub account & repository "
-description = "Compose CLI reference"
-keywords = ["fig, composition, compose, docker, orchestration, cli,  reference"]
+description = "Getting started with Docker"
+keywords = ["beginner, getting started, Docker"]
 [menu.mac]
 identifier = "mac_hub"
 weight = 5
@@ -16,11 +16,11 @@ image up to it so other people with Docker can run it.
 
 ## Step 1: Sign up for an account
 
-1. Use your browser to navigate to <a href="https://hub.docker.com/account/signup/" target="_blank">Docker Hub signup page</a>.
+1. Use your browser to navigate to <a href="https://hub.docker.com/account/signup/" target="_blank">the Docker Hub signup page</a>.
 	
-	Your browser displays the Hub signup page.
+	Your browser displays the page.
 	
-	  ![Hub signup](/mac/images/hub_signup.png)
+	  ![Hub signup](/img/hub_signup.png)
 
 2. Fill out the form on the signup page.
 
@@ -55,7 +55,7 @@ Before you can share anything on the hub, you need to verify your email address.
 
   When you are done, your form should look similar to the following:
 
-	{{< figure src="/img/add_repository.png" >}}
+  ![Add repository](/img/add_repository.png)
 
 6. Press **Add Repository** when you are done.
 

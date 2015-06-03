@@ -1,7 +1,7 @@
 +++
 title = "Build your own image"
-description = "Compose CLI reference"
-keywords = ["fig, composition, compose, docker, orchestration, cli,  reference"]
+description = "Getting started with Docker"
+keywords = ["beginner, getting started, Docker"]
 [menu.mac]
 identifier = "mac_image"
 weight = 4
@@ -10,11 +10,11 @@ weight = 4
 # Build your own image
 
 The `whalesay` image could be improved. It would be nice if you didn't have to
-think of something to say. And the command is very long to get `whalesay` to talk.
+think of something to say. And you type a lot to get `whalesay` to talk.
 
-  docker run moxiegirl/whalesay cowsay boo-boo
+    docker run moxiegirl/whalesay cowsay boo-boo
 
-In this next section, you will improve the `whalesay` image by building a new version that supplies its own sayings and that has a much shorter command line.
+In this next section, you will improve the `whalesay` image by building a new version that "talks on its own" and requires fewer words to run.
 
 ## Step 1: Open a Boot2Docker terminal 
 
@@ -47,37 +47,40 @@ commands to run. Your recipe is going to be very short.
         $ ls Dockerfile
         Dockerfile
     
-3. Now, type the `open -e Dockerfile` to edit the file in Mac's TextEdit program
+3. Now, type the `open -e Dockerfile` to open the file in Mac's TextEdit program.
+    
+    Your Mac opens the TextEdit program with the empty Dockerfile.
     
     ![Edit Dockerfile](/mac/images/text_edit.png)
 
-1. Create a text file called `Dockerfile` in your current directory.
+3. Type `FROM moxiegirl/whalesay:latest` line into the open file.
 
-	You can use any text editor for example, `vi` or `nano` to do this.
+    Now, it should look like this.
 
-3. Type a line into the file like this:
-
-	![Line one](/mac/images/line_one.png)
-		
-	The `FROM` keyword tells Docker which image your image is based on. Whalesay
-	is cute and has the `cowsay` program already, so we'll start there.	
+    ![Line one](/mac/images/line_one.png)
+    
+	  The `FROM` keyword tells Docker which image your image is based on. You
+    are basing your new work on the existing `whalesay` image. 
 		
 4. Now, add the `fortunes` program to the image.
 
 	 ![Line two](/mac/images/line_two.png)
 	 
 	 The `fortunes` program has a command that prints out wise sayings for our
-	 whale to say. So, the first step is to install it. This line installs the
-	 software into the image.
+	 whale to say. So, the first step is to install it. This line adds the
+	 `fortune` program using the `apt-get` program. If these sound all very
+	 cryptic to you, don't worry. As long as you type the words correctly, they
+	 will work for you!
 	 
 5. Once the image has the software it needs, you instruct the software to run
 when the image is loaded.
 
 	![Line two](/mac/images/line_three.png)
 
- 	This line tells the `fortune` program to pass a nifty quote to the `cowsay` program.
+ 	This line tells the `fortune` program to send its nifty quotes to the `cowsay` program.
 		
 6. Save your work and the Dockerfile by pressing choosing **File > Save** from the TextEdit menu or by pressing CMD + S on your keyboard.
+
 	At this point, you have all your software ingredients and behaviors described
 	in a Dockerfile. You are ready to build a new image.
 
@@ -93,7 +96,7 @@ when the image is loaded.
 
         CMD /usr/games/fortune -a | cowsay
 
-9. Now, build your new image by typing the  `docker build -t docker-whale .` command in your terminal (don't forget the . period).
+9. Now, build your new image by typing the `docker build -t docker-whale .` command in your terminal (don't forget the . period).
 
         $ docker build -t docker-whale .
         Sending build context to Docker daemon 158.8 MB
@@ -101,9 +104,9 @@ when the image is loaded.
         Removing intermediate container a8e6faa88df3
         Successfully built 7d9495d03763
         
-    The command takes several seconds to run and reports its outcome. Before you
-    do anything with the new image, take a minute to learn about the build
-    process.
+	  The command takes several seconds to run and reports its outcome. Before
+    you do anything with the new image, take a minute to learn about the
+    Dockerfile build process.
 
 ## Step 3: Learn about the build process
 
@@ -112,7 +115,7 @@ current directory, and builds an image called `docker-whale` on your local
 machine. The command takes about a minute and its output looks really long and
 complex. In this section, you learn what each message means.
 
-First Docker checks to make sure it has the context it needs to build. 
+First Docker checks to make sure it has the everything it needs to build. 
   
     Sending build context to Docker daemon 158.8 MB
 
@@ -123,9 +126,8 @@ download it.
     Step 0 : FROM moxiegirl/whalesay:latest
      ---> fb434121fc77
 
-Docker moves onto the next step which is to update the package manager's
-list of software repositories. This takes a lot of lines, no need to list
-them all again here.
+Docker moves onto the next step which is to update the `apt-get` package
+manager. This takes a lot of lines, no need to list them all again here.
 
     Step 1 : RUN apt-get -y update && apt-get install -y fortunes
      ---> Running in 27d224dfa5b2
@@ -162,13 +164,8 @@ Then, Docker installs the new `fortunes` software.
     Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
      ---> c81071adeeb5
     Removing intermediate container 23aa52c1897c
-    Step 3 : CMD /usr/games/fortune -a | cowsay
-     ---> Running in a8e6faa88df3
-     ---> 7d9495d03763
-    Removing intermediate container a8e6faa88df3
-    Successfully built 7d9495d03763
   
-Finally, Docker runs the last command and finishes the build.		
+Finally, Docker finishes the build and reports its outcome.		
 
     Step 3 : CMD /usr/games/fortune -a | cowsay
      ---> Running in a8e6faa88df3
@@ -179,7 +176,7 @@ Finally, Docker runs the last command and finishes the build.
 
 ## Step 4: Run your new docker-whale
 
-In this step, you run the image you just build.
+In this step, you verify the new images is on your computer and then you run your new image.
 
 1. If it isn't already there, place your cursor at the prompt in the Boot2Docker terminal window.
 
@@ -212,11 +209,14 @@ In this step, you run the image you just build.
 						\    \        __/             
 							\____\______/   
 
-	As you can see, you've made the whale a lot smarter. It finds its own things
-	to say and the command line is a lot shorter!
+	As you can see, you've made the whale a lot smarter. It finds its own
+	things to say and the command line is a lot shorter!  You may also notice
+	that Docker didn't have to download anything.  That is because the image was
+	built locally and is already available.
 	
 ## Where to go next
 
-On this page, you learned to build an image by writing your own Dockerfile. You
-ran your image in a container. In the next section, you take the first step in
-sharing your image by [creating a Docker Hub account](/mac/step_five).
+	On this page, you learned to build an image by writing your own Dockerfile.
+You ran your image in a container. You also just used Linux from your Mac yet
+again. In the next section, you take the first step in sharing your image by
+[creating a Docker Hub account](/mac/step_five).

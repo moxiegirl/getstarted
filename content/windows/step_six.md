@@ -1,7 +1,7 @@
 +++
 title = "Tag and push your image"
-description = "Compose CLI reference"
-keywords = ["fig, composition, compose, docker, orchestration, cli,  reference"]
+description = "Getting started with Docker"
+keywords = ["beginner, tutorial, Docker"]
 [menu.windows]
 identifier = "windows_tag"
 weight = 6

@@ -1,17 +1,18 @@
 +++
 title = "Get Started with Docker"
-description = "Compose CLI reference"
-keywords = ["fig, composition, compose, docker, orchestration, cli,  reference"]
+description = "Getting started with Docker"
+keywords = ["beginner, getting started, Docker"]
 [menu.mac]
 identifier = "mac_getstarted"
 +++
 
 # Get Started with Docker for Mac OS X
 
-##### This tutorial is intended for users on Linux systems such as Ubuntu. Not your operating system? You can choose the tutorial for [Linux](/linux/started) or [Windows](/windows/started).
+##### This getting started is intended for users on Linux systems such as Ubuntu. Not your operating system? You can choose the getting started for [Linux](/linux/started) or [Windows](/windows/started).
 
-This tutorial introduces fundamental Docker features by guiding you through some
-simple tasks. It takes approximately 30 minutes to complete. You'll learn how to:
+This getting started introduces fundamental Docker features by guiding you
+through some simple tasks. It takes approximately 45 minutes to complete. You'll
+learn how to:
 
 * install Docker
 * run a software image in a container
@@ -21,13 +22,17 @@ simple tasks. It takes approximately 30 minutes to complete. You'll learn how to
 * create an image of your own
 * push your image to Docker Hub for others to use
 
+The getting started was user tested to reduce the chance of users having problems. For the best chance of success, you should follow the steps as written the first time before exploring on your own.
+
 
 ### Make sure you understand...
 
-This tutorial is a basic tutorial aimed at users entirely new to Docker. It should be comfortable for users who are non-technical and perhaps just investigating Docker.
+This getting started is for users entirely new to Docker. Users who are non-technical and perhaps just investigating Docker are the target audience.
 
-While Docker has a graphical interface called Kitematic, this tutorial uses the
-command line which is available on each of Docker's major distribution. You don't need to be experienced using a command line, but you should have some experience.
+This getting started uses Docker commands with a terminal window. Docker from
+the command line is supported on all major OS distributions. You don't need to
+be experienced using a command line, but you should be familiar with how to open
+one and type commands.
 
 
 

@@ -1,7 +1,7 @@
 +++
 title = "Where to go next"
-description = "Compose CLI reference"
-keywords = ["fig, composition, compose, docker, orchestration, cli,  reference"]
+description = "Getting started with Docker"
+keywords = ["beginner, tutorial, Docker"]
 [menu.windows]
 identifier = "windows_next"
 weight = 8

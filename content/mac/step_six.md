@@ -1,7 +1,7 @@
 +++
 title = "Tag, push, & pull your image"
-description = "Compose CLI reference"
-keywords = ["fig, composition, compose, docker, orchestration, cli,  reference"]
+description = "Getting started with Docker"
+keywords = ["beginner, getting started, Docker"]
 [menu.mac]
 identifier = "mac_tag"
 weight = 6
@@ -32,12 +32,12 @@ If you don't already have a terminal open, open one now:
 
 2. Type `docker images` to list the images you currently have:
 
-    $ docker images
-		REPOSITORY           TAG          IMAGE ID            CREATED             VIRTUAL SIZE
-		docker-whale         latest       7d9495d03763        38 minutes ago      273.7 MB
-		<none>               <none>       5dac217f722c        45 minutes ago      273.7 MB
-		moxiegirl/whalesay   latest       fb434121fc77        4 hours ago         247 MB
-		hello-world          latest       91c95931e552        5 weeks ago         910 B
+      $ docker images
+      REPOSITORY           TAG          IMAGE ID            CREATED             VIRTUAL SIZE
+      docker-whale         latest       7d9495d03763        38 minutes ago      273.7 MB
+      <none>               <none>       5dac217f722c        45 minutes ago      273.7 MB
+      moxiegirl/whalesay   latest       fb434121fc77        4 hours ago         247 MB
+      hello-world          latest       91c95931e552        5 weeks ago         910 B
 		
 3. Find the `IMAGE ID` for your `docker-whale` image. 
 
@@ -52,7 +52,7 @@ If you don't already have a terminal open, open one now:
 
     The command you type looks like this:
     
-    {{< figure src="/img/tagger.png" >}}
+     ![tagger](/img/tagger.png)
     
     Of course, your account name will be your own. So, you type the command with
     your image's ID and your account name and press RETURN.
@@ -61,13 +61,13 @@ If you don't already have a terminal open, open one now:
 	
 7. Type the `docker images` command again to see your newly tagged image.
 
-		$ docker images
-		REPOSITORY                  TAG       IMAGE ID        CREATED          VIRTUAL SIZE
-		maryatdocker/docker-whale   latest    7d9495d03763    5 minutes ago    273.7 MB
-		docker-whale                latest    7d9495d03763    2 hours ago      273.7 MB
-		<none>                      <none>    5dac217f722c    5 hours ago      273.7 MB
-		moxiegirl/whalesay          latest    fb434121fc77    5 hours ago      247 MB
-		hello-world                 latest    91c95931e552    5 weeks ago      910 B
+        $ docker images
+        REPOSITORY                  TAG       IMAGE ID        CREATED          VIRTUAL SIZE
+        maryatdocker/docker-whale   latest    7d9495d03763    5 minutes ago    273.7 MB
+        docker-whale                latest    7d9495d03763    2 hours ago      273.7 MB
+        <none>                      <none>    5dac217f722c    5 hours ago      273.7 MB
+        moxiegirl/whalesay          latest    fb434121fc77    5 hours ago      247 MB
+        hello-world                 latest    91c95931e552    5 weeks ago      910 B
 
 8. Type the `docker push` command to push your image to your new repository.
 
@@ -101,7 +101,7 @@ If you don't already have a terminal open, open one now:
 			
 9. Return to your profile on Docker Hub to see your new image.
 
-	{{< figure src="/img/new_image.png" >}}
+	 ![New image](/img/new_image.png)
 	
 # Step 3: Pull your new image
 
@@ -180,7 +180,7 @@ images.
 						\    \        __/             
 							\____\______/   
 
-## Congratulations you completed the Docker Demo
+## Where to go next
 
 You've done a lot, you've done all of the following fundamental Docker tasks.
 
@@ -192,8 +192,4 @@ You've done a lot, you've done all of the following fundamental Docker tasks.
 * create a Docker Hub account and repository
 * pushed your image to Docker Hub for others to share
 
-You've only scratched the surface of what Docker can do. For example, you've
-only used the Docker Engine which is the core product in our platform. You can
-investigate other [Docker Products](http:/www.docker.com/products). To try more
-advanced Docker tasks, view the [Docker User Guide](http://docs.docker.com) in
-our documentation.
+You've only scratched the surface of what Docker can do.

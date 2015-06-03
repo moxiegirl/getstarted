@@ -360,3 +360,7 @@ padding-top:0px;
     width: 750px;
   }
 }
+
+.tutorial  {border-collapse:collapse;border-spacing:0;}
+.tutorial td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tutorial th{font-family:Arial, sans-serif;font-size:14px;font-weight:emphasis;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
