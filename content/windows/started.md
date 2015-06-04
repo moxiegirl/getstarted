@@ -34,6 +34,8 @@ the command line is supported on all major OS distributions. You don't need to
 be experienced using a command line, but you should be familiar with how to open
 one and type commands.
 
+Go to [the next page to install](/windows/step_one).
+
 
 
 	

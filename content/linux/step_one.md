@@ -7,7 +7,7 @@ identifier = "linux_install"
 weight = 1
 +++
 
-# Step 1: Install Docker
+# Install Docker
 
 1. Log into your Ubuntu installation as a user with `sudo` privileges.
 
@@ -63,3 +63,8 @@ weight = 1
 		http://docs.docker.com/userguide/
 
   This command downloads a test image and runs it in a container.
+  
+## Where to go next
+
+At this point, you have successfully installed Docker. Leave the Boot2Docker window open.
+Then, go onto [read a very short explainer Docker images and containers](/linux/step_two).

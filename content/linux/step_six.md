@@ -176,4 +176,4 @@ You've done a lot, you've done all of the following fundamental Docker tasks.
 * create a Docker Hub account and repository
 * pushed your image to Docker Hub for others to share
 
-You've only scratched the surface of what Docker can do.
+You've only scratched the surface of what Docker can do. Go to the next page to [learn more](/linux/last_page).

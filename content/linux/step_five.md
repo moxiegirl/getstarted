@@ -59,7 +59,8 @@ Before you can share anything on the hub, you need to verify your email address.
 
 6. Press **Add Repository** when you are done.
 
-		Docker Hub creates your new repository.		
+		Docker Hub creates your new repository.	
+			
 ## Where to go next
 
 On this page, you opened an account on Docker Hub and created a new repository.
