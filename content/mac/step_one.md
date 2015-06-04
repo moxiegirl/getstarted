@@ -33,22 +33,14 @@ To find out what version of the OS you have:
 
 ## Step 2: Install Boot2Docker
 
-1. Go to the <a href="https://github.com/boot2docker/osx-installer/releases/latest" target="_blank">boot2docker/osx-installer</a> release page.
-
-    ![Release page](/mac/images/release_page.png)
-    
-2. Download Boot2Docker by clicking `Boot2Docker-x.x.x.pkg` in the **Downloads** section.
+1. Click <a href="https://github.com/boot2docker/osx-installer/releases/download/v1.6.2/Boot2Docker-1.6.2.pkg" >to download the Boot2Docker installer</a>.
    
 	  The browser downloads the package to your machine. It can take about a
     minute.
 
 3. Open the downloaded package file.
 
-    You can open it from your browser or by double-click the file itself.
-
-    ![Open download](/mac/images/open_download.png)
-    
-    When you open the package, the system displays the **Install Boot2Docker for
+    You can open it from your browser or by double-click the file itself. When you open the package, the system displays the **Install Boot2Docker for
     Mac OS X** wizard.
     
     ![Package installer](/mac/images/package_installer.png)
