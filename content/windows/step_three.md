@@ -1,79 +1,118 @@
 +++
-title = "Locate and run the whalesay image "
+title = "Find & run the whalesay image "
 description = "Getting started with Docker"
-keywords = ["beginner, tutorial, Docker"]
+keywords = ["beginner, getting started, Docker"]
 [menu.windows]
 identifier = "windows_locate"
 weight = 3
 +++
 
-# Step 3: Locate and run the whalesay image 
+# Find and run the whalesay image 
 
-It is very easy to create your own image. In this next section, you'll create your own image from one already shared on the Docker Hub.  Docker Hub is Docker website where the community gathers to share software images.
+People all over the world create Docker images. You can find these images by browsing the Docker Hub. In this next section, you'll do just that to find the image to use in the rest of this getting started.
 
-1. Use your browser to navigate to [http://hub.docker.com](http://hub.docker.com).
+## Step 1: Open a Boot2Docker terminal 
 
-	The hub contains images from individuals like you and official images from
-	organizations like RedHat, IBM, Google, and a whole lot more.
+If you don't already have a terminal open, open one now:
 
-2. Enter the word `whalesay` in the search bar.
+1. From the **Desktop** and locate the Boot2Docker icon.
 
-	You'll see that it returns a lot of images. We want the Official Image from
-	Docker.
+    ![Desktop](/windows/images/icon-set.png)
+    
+2. Click the icon to launch a Boot2Docker terminal.
 
-3. Change the filter to show only Official Images.
+   Just leave the terminal open on your desktop, you'll be using it in a moment.
 
-4. Navigate to the `whalesay` image.
 
-	From the repository page, you see that the image installs a famous Linux
-	program called `cowsay`. The `cowsay` program takes a word or phrase and
-	prints out an ASCII image of a cow saying that word or phrase. In the case of
-	the `whalesay` image, the Docker whale does the talking instead of a cow.
+## Step 2: Locate the whalesay image
 
-7. Back in your terminal, run the image in a container.
+1. Open your browser and  <a href="http://hub.docker.com" target=_blank> browse to the Docker Hub</a>.
+    
+    ![Whalesay image](/img/browse_and_search.png)
 
-		$ docker run moxiegirl/whalesay cowsay boo
-		Unable to find image 'moxiegirl/whalesay:latest' locally
-		latest: Pulling from moxiegirl/whalesay
-		e9e06b06e14c: Pull complete 
-		a82efea989f9: Pull complete 
-		37bea4ee0c81: Pull complete 
-		07f8e8c5e660: Pull complete 
-		676c4a1897e6: Pull complete 
-		5b74edbcaa5b: Pull complete 
-		1722f41ddcb5: Pull complete 
-		99da72cfe067: Pull complete 
-		5d5bd9951e26: Pull complete 
-		fb434121fc77: Already exists 
-		Digest: sha256:d6ee73f978a366cf97974115abe9c4099ed59c6f75c23d03c64446bb9cd49163
-		Status: Downloaded newer image for moxiegirl/whalesay:latest
-		 _____ 
-		< boo >
-		 ----- 
-				\
-				 \
-					\     
-												##        .            
-									## ## ##       ==            
-							 ## ## ## ##      ===            
-					 /""""""""""""""""___/ ===        
-			~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
-					 \______ o          __/            
-						\    \        __/             
-							\____\______/   
+	The Docker Hub contains images from individuals like you and official images
+	from organizations like RedHat, IBM, Google, and a whole lot more.
+
+2. Click **Browse & Search**.
+
+    The browser opens the search page.
+
+3. Enter the word `whalesay` in the search bar.
+
+     ![Whalesay image](/img/image_found.png)
+
+4. Click on the **moxiegirl/whalesay** image in the results.
+
+    The browser displays the repository for the **whalesay** image. 
+   
+      ![Whale repo](/img/whale_repo.png)
+
+	  Each image repository contains information about an image. It should
+    include information such as what kind of software the image contains and
+    how to use it. You may notice that the **whalesay** image is based on a
+    Linux distribution called Ubuntu. In the next step, you run the **whalesay** image on your machine.
+
+7. Put your cursor in your Boot2Docker terminal at the `$` prompt.
+
+8. Type the `docker run moxiegirl/whalesay cowsay boo` command and press RETURN.
+
+    This command runs the **whalesay** image in a container. Your terminal should look like the following:
+
+        $ docker run moxiegirl/whalesay cowsay boo
+        Unable to find image 'moxiegirl/whalesay:latest' locally
+        latest: Pulling from moxiegirl/whalesay
+        e9e06b06e14c: Pull complete 
+        a82efea989f9: Pull complete 
+        37bea4ee0c81: Pull complete 
+        07f8e8c5e660: Pull complete 
+        676c4a1897e6: Pull complete 
+        5b74edbcaa5b: Pull complete 
+        1722f41ddcb5: Pull complete 
+        99da72cfe067: Pull complete 
+        5d5bd9951e26: Pull complete 
+        fb434121fc77: Already exists 
+        Digest: sha256:d6ee73f978a366cf97974115abe9c4099ed59c6f75c23d03c64446bb9cd49163
+        Status: Downloaded newer image for moxiegirl/whalesay:latest
+         _____ 
+        < boo >
+         ----- 
+            \
+             \
+              \     
+                            ##        .            
+                      ## ## ##       ==            
+                   ## ## ## ##      ===            
+               /""""""""""""""""___/ ===        
+          ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+               \______ o          __/            
+                \    \        __/             
+                  \____\______/   
 							
-		The first time you run a software image, the `docker` command looks for it
-		on your local system. If the image isn't there, then `docker` gets it from
-		the hub.
+	The first time you run a software image, the `docker` command looks for it
+	on your local system. If the image isn't there, then `docker` gets it from
+	the hub.
 
-7. List the images on your local system.
+9. While still in the Boot2Docker terminal, type `docker images` command and press RETURN.
 
-		$ docker images
-		REPOSITORY           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-		moxiegirl/whalesay   latest              fb434121fc77        3 hours ago         247 MB
-		hello-world          latest              91c95931e552        5 weeks ago         910 B
+    The command lists all the images on your local system. You should see
+    `moxiegirl/whalesay` in the list.
 
-8. Run the `whalesay` image again.
+        $ docker images
+        REPOSITORY           TAG         IMAGE ID            CREATED            VIRTUAL SIZE
+        moxiegirl/whalesay   latest      fb434121fc77        3 hours ago        247 MB
+        hello-world          latest      91c95931e552        5 weeks ago        910 B
+    
+		
+	When you run an image in a container, Docker downloads the image your
+	computer. This local copy of the image saves you time.  Docker only downloads
+	the image again if the image's source changes on the hub.  You can, of course,
+	delete the image yourself. You'll learn more about that later. Let's leave the
+	image there for now because we are going to use it later. 
+
+10. Take a moment to play with the **whalesay** container a bit. 
+
+    Try running the `whalesay` image again with a word or phrase. Try a long or
+    short phrase.  Can you break the cow?
 
 		$ docker run moxiegirl/whalesay cowsay boo-boo
 		 _________ 
@@ -91,4 +130,10 @@ It is very easy to create your own image. In this next section, you'll create yo
 						\    \        __/             
 							\____\______/   
 		
-		This time `docker` found the local image and ran it for you.
+## Where to go next
+
+On this page, you learned to search for images on Docker Hub. You used your
+command line to run an image. Think about it, effectively you ran a piece of
+Linux software on your Mac computer.  You learned that running an image copies
+it on your computer.  Now, you are ready to create your own image with Docker.
+Go on to the next part [to locate and run the whalesay image](/windows/step_four).

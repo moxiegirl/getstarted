@@ -1,17 +1,18 @@
 +++
 title = "Get Started with Docker"
 description = "Getting started with Docker"
-keywords = ["beginner, tutorial, Docker"]
+keywords = ["beginner, getting started, Docker"]
 [menu.windows]
 identifier = "windows_getstarted"
 +++
 
-# Get Started with Docker on Windows
+# Get Started with Docker for Windows
 
-##### This tutorial is intended for users on Windows 8 or Windows server systems. Not your operating system? You can choose the tutorial for [Linux](/linux/started) or [Mac OS X](/mac/started).
+##### This getting started is intended for users on Linux systems such as Ubuntu. Not your operating system? You can choose the getting started for [Linux](/linux/started) or [Mac OS X](/mac/started).
 
-This tutorial introduces fundamental Docker features by guiding you through some
-simple tasks. It takes approximately 30 minutes to complete. You'll learn how to:
+This getting started introduces fundamental Docker features by guiding you
+through some simple tasks. It takes approximately 45 minutes to complete. You'll
+learn how to:
 
 * install Docker
 * run a software image in a container
@@ -21,11 +22,17 @@ simple tasks. It takes approximately 30 minutes to complete. You'll learn how to
 * create an image of your own
 * push your image to Docker Hub for others to use
 
-While Docker has a graphical interface called Kitematic, this tutorial uses the
-command line which is available on each of Docker's major distribution.
+The getting started was user tested to reduce the chance of users having problems. For the best chance of success, you should follow the steps as written the first time before exploring on your own.
 
 
+### Make sure you understand...
 
+This getting started is for users entirely new to Docker. Users who are non-technical and perhaps just investigating Docker are the target audience.
+
+This getting started uses Docker commands with a terminal window. Docker from
+the command line is supported on all major OS distributions. You don't need to
+be experienced using a command line, but you should be familiar with how to open
+one and type commands.
 
 
 

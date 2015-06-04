@@ -102,12 +102,12 @@ If you don't already have a terminal open, open one now:
         moxiegirl/whalesay   latest      fb434121fc77        3 hours ago        247 MB
         hello-world          latest      91c95931e552        5 weeks ago        910 B
     
-		When you run an image in a container, Docker downloads the image your
-	  computer. This local copy of the image saves you time.  Docker only
-	  downloads the image again if the image's source changes on the hub.  You
-	  can, of course, delete the image yourself. You'll learn more about that
-	  later. Let's leave the image there for now because we are going to use it
-	  later. 
+  When you run an image in a container, Docker downloads the image your
+  computer. This local copy of the image saves you time.  Docker only
+  downloads the image again if the image's source changes on the hub.  You
+  can, of course, delete the image yourself. You'll learn more about that
+  later. Let's leave the image there for now because we are going to use it
+  later. 
 
 10. Take a moment to play with the **whalesay** container a bit. 
 
@@ -132,7 +132,7 @@ If you don't already have a terminal open, open one now:
 		
 ## Where to go next
 
-	On this page, you learned to search for images on Docker Hub. You used your
+On this page, you learned to search for images on Docker Hub. You used your
 command line to run an image. Think about it, effectively you ran a piece of
 Linux software on your Mac computer.  You learned that running an image copies
 it on your computer.  Now, you are ready to create your own image with Docker.

@@ -79,7 +79,7 @@ when the image is loaded.
 
  	This line tells the `fortune` program to send its nifty quotes to the `cowsay` program.
 		
-6. Save your work and the Dockerfile by pressing choosing **File > Save** from the TextEdit menu or by pressing CMD + S on your keyboard.
+6. Save your work and the Dockerfile by choosing **File > Save** from the TextEdit menu or by pressing CMD + S on your keyboard.
 
 	At this point, you have all your software ingredients and behaviors described
 	in a Dockerfile. You are ready to build a new image.
@@ -216,7 +216,7 @@ In this step, you verify the new images is on your computer and then you run you
 	
 ## Where to go next
 
-	On this page, you learned to build an image by writing your own Dockerfile.
+On this page, you learned to build an image by writing your own Dockerfile.
 You ran your image in a container. You also just used Linux from your Mac yet
 again. In the next section, you take the first step in sharing your image by
 [creating a Docker Hub account](/mac/step_five).
