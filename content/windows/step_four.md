@@ -42,7 +42,7 @@ commands to run. Your recipe is going to be very short.
 
         $ cd Desktop
 
-2. Create a Dockerfile in the current directory by typing `touch Dockerfile` and pressing RETURN.
+3. Create a Dockerfile in the current directory by typing `touch Dockerfile` and pressing RETURN.
 
         $ touch Dockerfile
         

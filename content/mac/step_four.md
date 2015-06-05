@@ -31,9 +31,21 @@ If you don't already have a terminal open, open one now:
     
 2. Click the icon to launch a Boot2Docker terminal.
 
-3. Place your cursor at the prompt in the Boot2Docker terminal.
+4. Place your cursor at the prompt in the Boot2Docker terminal.
 
-4. Create a Dockerfile in the current directory by typing `touch Dockerfile` and pressing RETURN.
+3. Make a new directory by typing `mkdir mydockerbuild` and pressing RETURN.
+
+        $ mkdir mydockerbuild
+        
+   This directory serves as the "context" for your build. The context just means it contains all the things you need to build your image. 
+
+4. Change to your new directory.
+
+        $ cd mydockerbuild
+        
+   Right now the directory is empty.
+
+5. Create a Dockerfile in the directory by typing `touch Dockerfile` and pressing RETURN.
 
         $ touch Dockerfile
         
@@ -42,7 +54,7 @@ If you don't already have a terminal open, open one now:
         $ ls Dockerfile
         Dockerfile
     
-5. Now, type the `open -e Dockerfile` to open the file in Mac's TextEdit program.
+6. Now, type the `open -e Dockerfile` to open the file in Mac's TextEdit program.
     
     Your Mac opens the TextEdit program with the empty Dockerfile.
     
@@ -82,6 +94,7 @@ when the image is loaded.
 ## Step 2. Build an image from your Dockerfile
 
 1. Place your cursor back in your Boot2Docker terminal.
+
 
 2. Make sure the Dockerfile is in the current directory by typing `cat Dockerfile`
 

@@ -8,7 +8,7 @@ identifier = "mac_getstarted"
 
 # Get Started with Docker for Mac OS X
 
-##### This getting started is intended for users on Linux systems such as Ubuntu. Not your operating system? You can choose the getting started for [Linux](/linux/started) or [Windows](/windows/started).
+##### This getting started is intended for users on Mac OS X systems such as Ubuntu. Not your operating system? You can choose the getting started for [Linux](/linux/started) or [Windows](/windows/started).
 
 This getting started introduces fundamental Docker features by guiding you
 through some simple tasks. It takes approximately 45 minutes to complete. You'll
