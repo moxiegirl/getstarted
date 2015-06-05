@@ -13,6 +13,8 @@ In this section, you tag and push your `docker-whale` image to your newly
 created repository. When you are done, you test the repository by pulling your
 new image.
 
+## Step 1: Tag and push the image 
+
 1. Go back to your terminal.
 
 2. List the images you currently have:
@@ -87,9 +89,12 @@ new image.
 
 	 ![New image](/img/new_image.png)
 	
-# Step 3: Pull your new image
+# Step 2: Pull your new image
 
-In this last section, you'll pull the image you just pushed to hub.
+In this last section, you'll pull the image you just pushed to hub. Before you
+do that though, you'll need to remove the original image from your local
+machine. If you left the original image on your machine. Docker would not pull
+from the hub &mdash; why would it? The two images are identical.
 
 1. Place your cursor at the prompt in the Boot2Docker terminal window.
 

@@ -16,7 +16,12 @@ think of something to say. And you type a lot to get `whalesay` to talk.
 
 In this next section, you will improve the `whalesay` image by building a new version that "talks on its own" and requires fewer words to run.
 
-## Step 1: Open a Boot2Docker terminal 
+## Step 1: Write a Dockerfile
+
+In this step, you use the Mac TextEdit program to write a short Dockerfile.  A
+Dockerfile describes the software that is "baked" into an image. It isn't just
+ingredients tho, it can tell the software what environment to use or what
+commands to run. Your recipe is going to be very short.
 
 If you don't already have a terminal open, open one now:
 
@@ -26,19 +31,9 @@ If you don't already have a terminal open, open one now:
     
 2. Click the icon to launch a Boot2Docker terminal.
 
-   Just leave the terminal open on your desktop, you'll be using it in a moment.
+3. Place your cursor at the prompt in the Boot2Docker terminal.
 
-
-## Step 2. Write a Dockerfile
-
-In this step, you use the Mac TextEdit program to write a short Dockerfile.  A
-Dockerfile describes the software that is "baked" into an image. It isn't just
-ingredients tho, it can tell the software what environment to use or what
-commands to run. Your recipe is going to be very short.
-
-1. Place your cursor at the prompt in the Boot2Docker terminal.
-
-2. Create a Dockerfile in the current directory by typing `touch Dockerfile` and pressing RETURN.
+4. Create a Dockerfile in the current directory by typing `touch Dockerfile` and pressing RETURN.
 
         $ touch Dockerfile
         
@@ -47,13 +42,13 @@ commands to run. Your recipe is going to be very short.
         $ ls Dockerfile
         Dockerfile
     
-3. Now, type the `open -e Dockerfile` to open the file in Mac's TextEdit program.
+5. Now, type the `open -e Dockerfile` to open the file in Mac's TextEdit program.
     
     Your Mac opens the TextEdit program with the empty Dockerfile.
     
     ![Edit Dockerfile](/mac/images/text_edit.png)
 
-3. Type `FROM moxiegirl/whalesay:latest` line into the open file.
+6. Type `FROM moxiegirl/whalesay:latest` line into the open file.
 
     Now, it should look like this.
 
@@ -62,7 +57,7 @@ commands to run. Your recipe is going to be very short.
 	  The `FROM` keyword tells Docker which image your image is based on. You
     are basing your new work on the existing `whalesay` image. 
 		
-4. Now, add the `fortunes` program to the image.
+7. Now, add the `fortunes` program to the image.
 
 	 ![Line two](/mac/images/line_two.png)
 	 
@@ -72,22 +67,23 @@ commands to run. Your recipe is going to be very short.
 	 cryptic to you, don't worry. As long as you type the words correctly, they
 	 will work for you!
 	 
-5. Once the image has the software it needs, you instruct the software to run
+8. Once the image has the software it needs, you instruct the software to run
 when the image is loaded.
 
 	![Line two](/mac/images/line_three.png)
 
  	This line tells the `fortune` program to send its nifty quotes to the `cowsay` program.
 		
-6. Save your work and the Dockerfile by choosing **File > Save** from the TextEdit menu or by pressing CMD + S on your keyboard.
+9. Save your work and the Dockerfile by choosing **File > Save** from the TextEdit menu or by pressing CMD + S on your keyboard.
 
 	At this point, you have all your software ingredients and behaviors described
 	in a Dockerfile. You are ready to build a new image.
+	
+## Step 2. Build an image from your Dockerfile
 
-7. Place your cursor back in your Boot2Docker terminal.
+1. Place your cursor back in your Boot2Docker terminal.
 
-
-8. Make sure the Dockerfile is in the current directory by typing `cat Dockerfile`
+2. Make sure the Dockerfile is in the current directory by typing `cat Dockerfile`
 
         $ cat Dockerfile
         FROM moxiegirl/whalesay:latest
@@ -96,7 +92,7 @@ when the image is loaded.
 
         CMD /usr/games/fortune -a | cowsay
 
-9. Now, build your new image by typing the `docker build -t docker-whale .` command in your terminal (don't forget the . period).
+3. Now, build your new image by typing the `docker build -t docker-whale .` command in your terminal (don't forget the . period).
 
         $ docker build -t docker-whale .
         Sending build context to Docker daemon 158.8 MB

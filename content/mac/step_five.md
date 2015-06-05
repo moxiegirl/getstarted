@@ -53,13 +53,13 @@ Before you can share anything on the hub, you need to verify your email address.
 
 6. Make sure you are creating a **Public** repository.
 
-  When you are done, your form should look similar to the following:
+    When you are done, your form should look similar to the following:
 
-  ![Add repository](/img/add_repository.png)
+    ![Add repository](/img/add_repository.png)
 
 6. Press **Add Repository** when you are done.
 
-		Docker Hub creates your new repository.
+	Docker Hub creates your new repository.
 		
 ## Where to go next
 
