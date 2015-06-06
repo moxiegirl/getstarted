@@ -102,7 +102,9 @@ when the image is loaded.
 
         CMD /usr/games/fortune -a | cowsay
 
-9. Now, build your new image by typing the `docker build -t docker-whale .` command in your terminal (don't forget the . period).
+9. Now, build your new image by typing  `docker build -t docker-whale .` and pressing RETURN.
+
+    Don't forget the . period it is part of the command.
 
         $ docker build -t docker-whale .
         Sending build context to Docker daemon 158.8 MB

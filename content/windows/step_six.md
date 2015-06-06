@@ -70,7 +70,9 @@ If you don't already have a terminal open, open one now:
 
 8. Type the `docker push` command to push your image to your new repository.
 
-	Docker prompts you to enter your username/password/email for Docker Hub.
+	Docker prompts you to enter your username/password/email for Docker Hub. When
+	you type your password, the command line doesn't display the password text.
+	This is to protect your security.
 
 		$ docker push maryatdocker/docker-whale
 			The push refers to a repository [maryatdocker/docker-whale] (len: 1)
@@ -134,8 +136,8 @@ images.
 
 	You can use an ID or the name to remove an image.
 
-		$ docker rmi 7d9495d03763
-		$ docker rmi docker-whale
+		$ docker rmi -f 7d9495d03763
+		$ docker rmi -f docker-whale
 		
 3. Pull a new image from your repository using the `docker pull` command.
 

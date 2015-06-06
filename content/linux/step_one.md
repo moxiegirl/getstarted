@@ -27,12 +27,12 @@ weight = 1
     The system prompts you for your `sudo` password. Then, it downloads and
     installs Docker and its dependencies.
     
->**Note**: If your company is behind a filtering proxy, you may find that the
->`apt-key`
->command fails for the Docker repo during installation. To work around this,
->add the key directly using the following:
->
->       $ wget -qO- https://get.docker.com/gpg | sudo apt-key add -
+    >**Note**: If your company is behind a filtering proxy, you may find that the
+    >`apt-key`
+    >command fails for the Docker repo during installation. To work around this,
+    >add the key directly using the following:
+    >
+    >       $ wget -qO- https://get.docker.com/gpg | sudo apt-key add -
 
 4. Verify `docker` is installed correctly.
 
@@ -67,5 +67,5 @@ weight = 1
   
 ## Where to go next
 
-At this point, you have successfully installed Docker. Leave the Boot2Docker window open.
+At this point, you have successfully installed Docker. Leave the terminal window open.
 Then, go onto [read a very short explainer Docker images and containers](/linux/step_two).

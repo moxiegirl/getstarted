@@ -57,8 +57,10 @@ new image.
 
 8. Type the `docker push` command to push your image to your new repository.
 
-	Docker prompts you to enter your username/password/email for Docker Hub.
-
+	Docker prompts you to enter your username/password/email for Docker Hub. When
+	you type your password, the command line doesn't display the password text.
+	This is to protect your security.
+	
 		$ docker push maryatdocker/docker-whale
 			The push refers to a repository [maryatdocker/docker-whale] (len: 1)
 			7d9495d03763: Image push failed 
@@ -96,7 +98,7 @@ do that though, you'll need to remove the original image from your local
 machine. If you left the original image on your machine. Docker would not pull
 from the hub &mdash; why would it? The two images are identical.
 
-1. Place your cursor at the prompt in the Boot2Docker terminal window.
+1. Place your cursor at the prompt in your terminal window.
 
 2. Type `docker images` to list the images you currently have on your local machine.
 
@@ -117,8 +119,8 @@ images.
 
 	You can use an ID or the name to remove an image.
 
-		$ docker rmi 7d9495d03763
-		$ docker rmi docker-whale
+		$ docker rmi -f 7d9495d03763
+		$ docker rmi -f docker-whale
 		
 3. Pull a new image from your repository using the `docker pull` command.
 

@@ -23,24 +23,38 @@ Dockerfile describes the software that is "baked" into an image. It isn't just
 ingredients tho, it can tell the software what environment to use or what
 commands to run. Your recipe is going to be very short.
 
-1. Create a text file called `Dockerfile` in your current directory.
+1. Go back to your terminal window.
+
+3. Make a new directory by typing `mkdir mydockerbuild` and pressing RETURN.
+
+        $ mkdir mydockerbuild
+        
+   This directory serves as the "context" for your build. The context just means it contains all the things you need to build your image. 
+
+4. Change to your new directory.
+
+        $ cd mydockerbuild
+        
+   Right now the directory is empty.
+
+5. Create a text file called `Dockerfile` in your current directory.
 
 	You can use any text editor for example, `vi` or `nano` to do this.
 
-2. Open a your Dockerfile file.
+6. Open a your Dockerfile file.
 
 	A Dockerfile describes the software that is "baked" into an image. It isn't
 	just ingredients tho, it can tell the software what environment to use or what
 	commands to run. Your recipe is going to be very short.
 
-3. Add a line to the file like this:
+7. Add a line to the file like this:
 
 		FROM moxiegirl/whalesay:latest
 		
 	The FROM keyword tells Docker which image your image is based on. Whalesay is cute and has the `cowsay`
 	program already, so we'll start there.	
 		
-4. Now, add the `fortunes` program to the image.
+8. Now, add the `fortunes` program to the image.
 
 	 	RUN apt-get -y update && apt-get install -y fortunes
 	 
@@ -48,24 +62,25 @@ commands to run. Your recipe is going to be very short.
 	 whale to say. So, the first step is to install it. This line installs the
 	 software into the image.
 	 
-5. Once the image has the software it needs, you instruct the software to run
+9. Once the image has the software it needs, you instruct the software to run
 when the image is loaded.
 
 		CMD /usr/games/fortune -a | cowsay
 
  	This line tells the `fortune` program to pass a nifty quote to the `cowsay` program.
 		
-5. Check your work, your file should look like this:
+10. Check your work, your file should look like this:
 
 		FROM moxiegirl/whalesay:latest
 		RUN apt-get -y update && apt-get install -y fortunes
 		CMD /usr/games/fortune -a | cowsay
 		
-5. Save and close your Dockerfile.
+11. Save and close your Dockerfile.
 
 	At this point, you have all your software ingredients and behaviors described
 	in a Dockerfile. You are ready to build a new image.
-9. Now, build your new image by typing the `docker build -t docker-whale .` command in your terminal (don't forget the . period).
+
+12. Now, build your new image by typing the `docker build -t docker-whale .` command in your terminal (don't forget the . period).
 
         $ docker build -t docker-whale .
         Sending build context to Docker daemon 158.8 MB
@@ -147,7 +162,7 @@ Finally, Docker finishes the build and reports its outcome.
 
 In this step, you verify the new images is on your computer and then you run your new image.
 
-1. If it isn't already there, place your cursor at the prompt in the Boot2Docker terminal window.
+1. If it isn't already there, place your cursor at the prompt in your terminal window.
 
 2. Type `docker images` and press RETURN.
 

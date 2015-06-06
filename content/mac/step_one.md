@@ -95,6 +95,15 @@ In this step, you start Boot2Docker and run a simple Docker command.
 
 3.  Click your mouse in the terminal window to make it active.
 
+    If you aren't familiar with a terminal window, here are some quick tips. 
+    
+    ![Teriminal](/img/terminal.png) 
+    
+    The prompt is traditionally a `$` dollar sign. You type commands into the
+    *command line* which is the area after the prompt. Your cursor is indicated
+    by a highlighted area or a `|` that appears in the command line. After
+    typing a command, always press RETURN.
+
 4. Type the `docker run hello-world` commmand and press RETURN.
 
     The command does some work for you, if everything runs well, the command's

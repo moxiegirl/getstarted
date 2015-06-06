@@ -18,7 +18,7 @@ As the last step in your installation, you ran the `docker run hello-world` comm
 A *container* is a stripped-to-basics version of a Linux operating system. An *image* is software you load into a container. When you ran the command, the Docker software:
 
 * checked to see if you had the `hello-world` software image
-* dowloaded the image from the Docker Hub (more about the hub later)
+* downloaded the image from the Docker Hub (more about the hub later)
 * loaded the image into the container and "ran" it
 
 Depending on how it was built, an image might run a simple, single command and then exit. This is what `Hello-World` did.

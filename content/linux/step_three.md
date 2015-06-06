@@ -41,7 +41,7 @@ People all over the world create Docker images. You can find these images by bro
     
 ## Step 2: Run whalesay in a container
 
-1. Put your cursor in your Boot2Docker terminal at the `$` prompt.
+1. Put your cursor in your terminal window at the `$` prompt.
 
 2. Type the `docker run moxiegirl/whalesay cowsay boo` command and press RETURN.
 
@@ -81,7 +81,7 @@ People all over the world create Docker images. You can find these images by bro
 	on your local system. If the image isn't there, then `docker` gets it from
 	the hub.
 
-3. While still in the Boot2Docker terminal, type `docker images` command and press RETURN.
+3. While still in the terminal, type `docker images` command and press RETURN.
 
     The command lists all the images on your local system. You should see
     `moxiegirl/whalesay` in the list.
