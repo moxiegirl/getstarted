@@ -25,9 +25,9 @@ If you don't already have a terminal open, open one now:
 
 3. Place your cursor at the prompt in the Boot2Docker terminal window.
 
-4. Make sure you are in desktop.
+4. Make sure you are in `testdocker` folder.
 
-        $ cd ~/Desktop
+        $ cd ~/Desktop/testdocker
 
 5. Type `docker images` to list the images you currently have:
 
@@ -68,37 +68,48 @@ If you don't already have a terminal open, open one now:
         moxiegirl/whalesay          latest    fb434121fc77    5 hours ago      247 MB
         hello-world                 latest    91c95931e552    5 weeks ago      910 B
 
+9. Use the `docker login` command to log into the Docker Hub from the command line.
+
+    The format for the login command is:
+    
+        docker login --username=yourhubusername --password=yourpassword --email=youremail@company.com
+
+    So, for example:
+    
+        $ docker login --username=moxiegirl --password=uydfiad77fad --email=mary@docker.com
+        WARNING: login credentials saved in /Users/mary/.dockercfg.
+        Login Succeeded
+
 8. Type the `docker push` command to push your image to your new repository.
 
-	Docker prompts you to enter your username/password/email for Docker Hub. When
-	you type your password, the command line doesn't display the password text.
-	This is to protect your security.
+	The `docker push` command includes the image and the image build context. If
+	you have followed these instructions, that context is the `testdocker` folder
+	with the single `Dockerfile` in it. When you push, the system provides a
+	security warning about the context files.
 
-		$ docker push maryatdocker/docker-whale
-			The push refers to a repository [maryatdocker/docker-whale] (len: 1)
-			7d9495d03763: Image push failed 
-
-			Please login prior to push:
-			Username: maryatdocker
-			Password: 
-			Email: mary@docker.com
-			WARNING: login credentials saved in /Users/mary/.dockercfg.
-			Login Succeeded
-			The push refers to a repository [maryatdocker/docker-whale] (len: 1)
-			7d9495d03763: Image already exists 
-			c81071adeeb5: Image successfully pushed 
-			eb06e47a01d2: Image successfully pushed 
-			fb434121fc77: Image successfully pushed 
-			5d5bd9951e26: Image successfully pushed 
-			99da72cfe067: Image successfully pushed 
-			1722f41ddcb5: Image successfully pushed 
-			5b74edbcaa5b: Image successfully pushed 
-			676c4a1897e6: Image successfully pushed 
-			07f8e8c5e660: Image successfully pushed 
-			37bea4ee0c81: Image successfully pushed 
-			a82efea989f9: Image successfully pushed 
-			e9e06b06e14c: Image successfully pushed 
-			Digest: sha256:ad89e88beb7dc73bf55d456e2c600e0a39dd6c9500d7cd8d1025626c4b985011
+        $ docker push maryatdocker/docker-whale
+        WARN[0000] SECURITY WARNING: You are building a Docker image from Windows against 
+        a Linux Docker host. All files and directories added to build context will have
+        '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions 
+        for sensitive files and directories.
+        The push refers to a repository [maryatdocker/docker-whale] (len: 1)
+        7d9495d03763: Image push failed 
+      
+        The push refers to a repository [maryatdocker/docker-whale] (len: 1)
+        7d9495d03763: Image already exists 
+        c81071adeeb5: Image successfully pushed 
+        eb06e47a01d2: Image successfully pushed 
+        fb434121fc77: Image successfully pushed 
+        5d5bd9951e26: Image successfully pushed 
+        99da72cfe067: Image successfully pushed 
+        1722f41ddcb5: Image successfully pushed 
+        5b74edbcaa5b: Image successfully pushed 
+        676c4a1897e6: Image successfully pushed 
+        07f8e8c5e660: Image successfully pushed 
+        37bea4ee0c81: Image successfully pushed 
+        a82efea989f9: Image successfully pushed 
+        e9e06b06e14c: Image successfully pushed 
+        Digest: sha256:ad89e88beb7dc73bf55d456e2c600e0a39dd6c9500d7cd8d1025626c4b985011
 			
 9. Return to your profile on Docker Hub to see your new image.
 
@@ -113,9 +124,9 @@ from the hub &mdash; why would it? The two images are identical.
 
 1. Place your cursor at the prompt in the Boot2Docker terminal window.
 
-2. Make sure you are in desktop.
+2. Make sure you are in `testdocker` folder.
 
-        $ cd ~/Desktop
+        $ cd ~/Desktop/testdocker
 
 3. Type `docker images` to list the images you currently have on your local machine.
 

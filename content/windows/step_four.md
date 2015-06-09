@@ -38,15 +38,25 @@ commands to run. Your recipe is going to be very short.
 
 1. Place your cursor at the prompt in the Boot2Docker terminal.
 
-2. Change to your Desktop directory.
+2. Change to your Desktop.
 
         $ cd Desktop
+        
+3. From the command line, a folder called `testdocker` on your Desktop.
+
+        $ mkdir testdocker
+        
+4. Change into the `tesetdocker` folder.
+
+        $ cd testdocker
 
 3. Create a Dockerfile in the current directory by typing `touch Dockerfile` and pressing RETURN.
 
+    Make sure you use a capital `D` in the file name. Linux file names are case sensitive. 
+
         $ touch Dockerfile
         
-    The command appears to do nothing but it actually creates the Dockerfile in the current directory.  Just type `ls Dockerfile` to see it.
+    The command appears to do nothing but it actually creates the Dockerfile in the current directory. Just type `ls Dockerfile` to see it.
     
         $ ls Dockerfile
         Dockerfile
@@ -70,7 +80,7 @@ commands to run. Your recipe is going to be very short.
 		
 4. Now, add the `fortunes` program to the image.
 
-	 ![Line two](/windows/images/note-pad2.png)
+	 ![Line two](/windows/images/note-pad3.png)
 	 
 	 The `fortunes` program has a command that prints out wise sayings for our
 	 whale to say. So, the first step is to install it. This line adds the
@@ -81,7 +91,7 @@ commands to run. Your recipe is going to be very short.
 5. Once the image has the software it needs, you instruct the software to run
 when the image is loaded.
 
-	![Line two](/windows/images/note-pad3.png)
+	![Line two](/windows/images/note-pad4.png)
 
  	This line tells the `fortune` program to send its nifty quotes to the `cowsay` program.
 		
