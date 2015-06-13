@@ -31,13 +31,13 @@ If you don't already have a terminal open, open one now:
 
 5. Type `docker images` to list the images you currently have:
 
-      $ docker images
-      REPOSITORY           TAG          IMAGE ID            CREATED             VIRTUAL SIZE
-      docker-whale         latest       7d9495d03763        38 minutes ago      273.7 MB
-      <none>               <none>       5dac217f722c        45 minutes ago      273.7 MB
-      moxiegirl/whalesay   latest       fb434121fc77        4 hours ago         247 MB
-      hello-world          latest       91c95931e552        5 weeks ago         910 B
-		
+        $ docker images
+        REPOSITORY           TAG          IMAGE ID            CREATED             VIRTUAL SIZE
+        docker-whale         latest       7d9495d03763        38 minutes ago      273.7 MB
+        <none>               <none>       5dac217f722c        45 minutes ago      273.7 MB
+        moxiegirl/whalesay   latest       fb434121fc77        4 hours ago         247 MB
+        hello-world          latest       91c95931e552        5 weeks ago         910 B
+    
 6. Find the `IMAGE ID` for your `docker-whale` image. 
 
 	In this example, the id is `7d9495d03763`.

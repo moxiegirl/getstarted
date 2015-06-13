@@ -136,5 +136,4 @@ In this step, you start Boot2Docker and run a simple Docker command.
 
 ## Where to go next
 
-At this point, you have successfully installed Docker. Leave the Boot2Docker window open.
-Then, go onto [read a very short explainer Docker images and containers](/mac/step_two).
+At this point, you have successfully installed Docker. Leave the Boot2Docker window open. Now, go to the next page to [read a very short introduction Docker images and containers](/mac/step_two).
