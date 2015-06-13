@@ -31,10 +31,10 @@ If you don't already have a terminal open, open one now:
 
 ## Step 2. Write a Dockerfile
 
-In this step, you use the Mac Notepad program to write a short Dockerfile.  A
-Dockerfile describes the software that is "baked" into an image. It isn't just
-ingredients tho, it can tell the software what environment to use or what
-commands to run. Your recipe is going to be very short.
+In this step, you use the Windows Notepad applicatin to write a short
+Dockerfile. A Dockerfile describes the software elements that make up an
+image. It isn't just elements though, a Dockerfile can describe what environment
+to use or what commands to run in the container. Your Dockerfile is going to be very short.
 
 1. Place your cursor at the prompt in the Boot2Docker terminal.
 
@@ -50,7 +50,7 @@ commands to run. Your recipe is going to be very short.
 
         $ cd testdocker
 
-3. Create a Dockerfile in the current directory by typing `touch Dockerfile` and pressing RETURN.
+5. Create a Dockerfile in the current directory by typing `touch Dockerfile` and pressing RETURN.
 
     Make sure you use a capital `D` in the file name. Linux file names are case sensitive. 
 
@@ -61,7 +61,7 @@ commands to run. Your recipe is going to be very short.
         $ ls Dockerfile
         Dockerfile
     
-3. Now, type the `notepad Dockerfile&` to open the file in Window's Notepad program (don't forget the `&` ampersand).
+6. Now, type the `notepad Dockerfile&` to open the file in Window's Notepad  (don't forget the `&` ampersand).
     
     ![ampersand](/windows/images/ampersand.png)
     
@@ -69,7 +69,7 @@ commands to run. Your recipe is going to be very short.
     
     ![Edit Dockerfile](/windows/images/note-pad1.png)
 
-3. Type `FROM moxiegirl/whalesay:latest` line into the open file.
+7. Type `FROM moxiegirl/whalesay:latest` line into the open file.
 
     Now, it should look like this.
 
@@ -78,7 +78,7 @@ commands to run. Your recipe is going to be very short.
 	  The `FROM` keyword tells Docker which image your image is based on. You
     are basing your new work on the existing `whalesay` image. 
 		
-4. Now, add the `fortunes` program to the image.
+8. Now, add the `fortunes` program to the image.
 
 	 ![Line two](/windows/images/note-pad3.png)
 	 
@@ -88,22 +88,22 @@ commands to run. Your recipe is going to be very short.
 	 cryptic to you, don't worry. As long as you type the words correctly, they
 	 will work for you!
 	 
-5. Once the image has the software it needs, you instruct the software to run
+9. Once the image has the software it needs, you instruct the software to run
 when the image is loaded.
 
 	![Line two](/windows/images/note-pad4.png)
 
  	This line tells the `fortune` program to send its nifty quotes to the `cowsay` program.
 		
-6. Save your work and the Dockerfile by choosing **File > Save** from the Notepad menu.
+10. Save your work and the Dockerfile by choosing **File > Save** from the Notepad menu.
 
 	At this point, you have all your software ingredients and behaviors described
 	in a Dockerfile. You are ready to build a new image.
 
-7. Place your cursor back in your Boot2Docker terminal.
+11. Place your cursor back in your Boot2Docker terminal.
 
 
-8. Make sure the Dockerfile is in the current directory by typing `cat Dockerfile`
+12. Make sure the Dockerfile is in the current directory by typing `cat Dockerfile`
 
         $ cat Dockerfile
         FROM moxiegirl/whalesay:latest
@@ -112,7 +112,7 @@ when the image is loaded.
 
         CMD /usr/games/fortune -a | cowsay
 
-9. Now, build your new image by typing  `docker build -t docker-whale .` and pressing RETURN.
+13. Now, build your new image by typing  `docker build -t docker-whale .` and press RETURN.
 
     Don't forget the . period it is part of the command.
 
@@ -144,7 +144,7 @@ download it.
     Step 0 : FROM moxiegirl/whalesay:latest
      ---> fb434121fc77
 
-Docker moves onto the next step which is to update the `apt-get` package
+Docker moves to the next step which is to update the `apt-get` package
 manager. This takes a lot of lines, no need to list them all again here.
 
     Step 1 : RUN apt-get -y update && apt-get install -y fortunes

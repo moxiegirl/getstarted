@@ -1,5 +1,5 @@
 +++
-title = "Install Docker on Windows"
+title = "Install Docker for Wiindows"
 description = "Getting started with Docker"
 keywords = ["install, demo, Docker, windows"]
 [menu.windows]
@@ -7,12 +7,13 @@ identifier = "windows_install"
 weight = 1
 +++
 
-# Install Docker Windows
+# Install Docker for Windows
 
 Because Docker relies on Linux-specific features, you can't run Docker natively
-in OS X. Instead, you must install the Boot2Docker application. The application
-installs a VirtualBox Virtual Machine (VM), Docker itself, and the Boot2Docker
-management tool. These three things allow you to run Docker on Windows.
+in Windows. Instead, you must install the Boot2Docker application. The
+application installs a VirtualBox Virtual Machine (VM), Docker itself, and the
+Boot2Docker management tool. These three things allow you to run Docker on
+Windows.
 
 ## Step 1: Check your version
 
@@ -26,7 +27,7 @@ To find out what version of Windows you have:
     If you aren't using a supported version, you could consider upgrading your
     operating system.
 
-2. Make sure your Windows machine supports Hardware Virtualization Technology and that virtualization is enabled.
+2. Make sure your Windows system supports Hardware Virtualization Technology and that virtualization is enabled.
 
     #### For Windows 8 or 8.1
 
@@ -35,7 +36,7 @@ To find out what version of Windows you have:
 
       ![Release page](/windows/images/virtualization.png)
     
-    If virtualization is not enabled, follow your machine manufacturer's instructions for enabling it.
+    If virtualization is not enabled on your system, follow the manufacturer's instructions for enabling it.
     
     ### For Windows 7 
     
@@ -72,7 +73,7 @@ If you have a previous version of VirtualBox installed, do not reinstall it with
 
 	  Accept all the installer defaults. The installer takes a few minutes to install all the components:
 	  
-	   ![Release page](/windows/images/win_installer.png)
+	   ![Release page](/windows/images/win_installing.png)
         
 5.  When notified by Windows Security the installer will make changes, make sure you allow the installer to make the necessary changes.
     
@@ -83,7 +84,7 @@ If you have a previous version of VirtualBox installed, do not reinstall it with
 6. Press **Finish**.
 
 
-## Step 4. Verify your installation
+## Step 3. Verify your installation
 
 The installer places Boot2Docker and VirtualBox in your **Applications** folder.
 In this step, you start Boot2Docker and run a simple Docker command.
@@ -96,7 +97,7 @@ In this step, you start Boot2Docker and run a simple Docker command.
 
     If the system displays a **User Account Control** prompt to allow VirtualBox to make changes to your computer. Choose **Yes**.
 
-    The terminal does a number of things to set up Boot2Docker for you. When it is done, it displays an waiting `$` prompt in the terminal window.
+    The terminal does several things to set up Boot2Docker for you. When it is done, the terminal displays the `$` prompt.
     
      ![Desktop](/windows/images/b2d_shell.png)
      
@@ -145,5 +146,6 @@ In this step, you start Boot2Docker and run a simple Docker command.
 
 ## Where to go next
 
-At this point, you have successfully installed Docker. Leave the Boot2Docker window open.
-Then, go onto [read a very short explainer Docker images and containers](/windows/step_two).
+At this point, you have successfully installed Docker. Leave the Boot2Docker
+window open. Go to the next page to [read a very short introduction to Docker
+images and containers](/windows/step_two).

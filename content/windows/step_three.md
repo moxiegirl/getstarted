@@ -9,7 +9,7 @@ weight = 3
 
 # Find and run the whalesay image 
 
-People all over the world create Docker images. You can find these images by browsing the Docker Hub. In this next section, you'll do just that to find the image to use in the rest of this getting started.
+People all over the world create Docker images. You can find these images by browsing the Docker Hub. In this next section, you'll search for and find the image you'll use in the rest of this getting started.
 
 ## Step 1: Open a Boot2Docker terminal 
 
@@ -41,7 +41,7 @@ If you don't already have a terminal open, open one now:
 
      ![Whalesay image](/img/image_found.png)
 
-4. Click on the **moxiegirl/whalesay** image in the results.
+4. Click **moxiegirl/whalesay** in the results.
 
     The browser displays the repository for the **whalesay** image. 
    
@@ -136,4 +136,5 @@ On this page, you learned to search for images on Docker Hub. You used your
 command line to run an image. Think about it, effectively you ran a piece of
 Linux software on your Mac computer.  You learned that running an image copies
 it on your computer.  Now, you are ready to create your own image with Docker.
-Go on to the next part [to build your own image](/windows/step_four).
+
+On the next page you learn how [to build your own image](/windows/step_four).
