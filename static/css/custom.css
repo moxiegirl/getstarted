@@ -352,7 +352,10 @@
 
 
 body {
-padding-top:0px;
+  padding-top: 0px;
+  -webkit-font-smoothing: antialiased;
+  color: #36485C;
+  font-weight: 400;
 }
 
 @media (min-width: 750px) {
@@ -371,3 +374,52 @@ blockquote {
 .tutorial  {border-collapse:collapse;border-spacing:0;}
 .tutorial td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
 .tutorial th{font-family:Arial, sans-serif;font-size:14px;font-weight:emphasis;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+
+a {
+  color: #24B8EB;
+}
+
+a:hover {
+  color: #24B8EB;
+}
+
+h1 {
+  color: #24B8EB;
+  font-weight: 300;
+  font-size: 36px;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 16px;
+  line-height: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+ul {
+  font-size: 16px;
+  line-height: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+ol {
+  font-size: 16px;
+  line-height: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+strong {
+  font-weight: 500;
+}
