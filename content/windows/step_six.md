@@ -31,14 +31,14 @@ If you don't already have a terminal open, open one now:
 
 5. Type `docker images` to list the images you currently have:
 
-      $ docker images
-      REPOSITORY           TAG          IMAGE ID            CREATED             VIRTUAL SIZE
-      docker-whale         latest       7d9495d03763        38 minutes ago      273.7 MB
-      <none>               <none>       5dac217f722c        45 minutes ago      273.7 MB
-      moxiegirl/whalesay   latest       fb434121fc77        4 hours ago         247 MB
-      hello-world          latest       91c95931e552        5 weeks ago         910 B
-		
-3. Find the `IMAGE ID` for your `docker-whale` image. 
+        $ docker images
+        REPOSITORY           TAG          IMAGE ID            CREATED             VIRTUAL SIZE
+        docker-whale         latest       7d9495d03763        38 minutes ago      273.7 MB
+        <none>               <none>       5dac217f722c        45 minutes ago      273.7 MB
+        moxiegirl/whalesay   latest       fb434121fc77        4 hours ago         247 MB
+        hello-world          latest       91c95931e552        5 weeks ago         910 B
+    
+6. Find the `IMAGE ID` for your `docker-whale` image. 
 
 	In this example, the id is `7d9495d03763`.
 
@@ -47,7 +47,7 @@ If you don't already have a terminal open, open one now:
 	Docker Hub to associate it with your account.  The `namespace` is the same as
 	your account name.
 
-6. Use `IMAGE ID` and the `docker tag` command to tag your `docker-whale` image.
+7. Use `IMAGE ID` and the `docker tag` command to tag your `docker-whale` image.
 
     The command you type looks like this:
     
@@ -58,7 +58,7 @@ If you don't already have a terminal open, open one now:
 
 		$ docker tag 7d9495d03763 maryatdocker/docker-whale:latest
 	
-7. Type the `docker images` command again to see your newly tagged image.
+8. Type the `docker images` command again to see your newly tagged image.
 
         $ docker images
         REPOSITORY                  TAG       IMAGE ID        CREATED          VIRTUAL SIZE
@@ -80,7 +80,7 @@ If you don't already have a terminal open, open one now:
         WARNING: login credentials saved in /Users/mary/.dockercfg.
         Login Succeeded
 
-8. Type the `docker push` command to push your image to your new repository.
+10. Type the `docker push` command to push your image to your new repository.
 
 	The `docker push` command includes the image and the image build context. If
 	you have followed these instructions, that context is the `testdocker` folder
@@ -111,7 +111,7 @@ If you don't already have a terminal open, open one now:
         e9e06b06e14c: Image successfully pushed 
         Digest: sha256:ad89e88beb7dc73bf55d456e2c600e0a39dd6c9500d7cd8d1025626c4b985011
 			
-9. Return to your profile on Docker Hub to see your new image.
+11. Return to your profile on Docker Hub to see your new image.
 
 	 ![New image](/img/new_image.png)
 	

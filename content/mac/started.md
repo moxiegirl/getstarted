@@ -8,11 +8,9 @@ identifier = "mac_getstarted"
 
 # Get Started with Docker for Mac OS X
 
-##### This getting started is intended for users on Mac OS X systems such as Ubuntu. Not your operating system? You can choose the getting started for [Linux](/linux/started) or [Windows](/windows/started).
+##### This is written for users of Mac OS X. If you are not using Mac OS X, see the [Linux](/linux/started) or [Windows](/windows/started) version.
 
-This getting started introduces fundamental Docker features by guiding you
-through some simple tasks. It takes approximately 45 minutes to complete. You'll
-learn how to:
+This getting started is for non-technical users who are interested in learning about Docker. By following this getting started, you'll learn fundamental Docker features by performing some simple tasks. You'll learn how to:
 
 * install Docker
 * run a software image in a container
@@ -22,19 +20,17 @@ learn how to:
 * create an image of your own
 * push your image to Docker Hub for others to use
 
-The getting started was user tested to reduce the chance of users having problems. For the best chance of success, you should follow the steps as written the first time before exploring on your own.
+The getting started was user tested to reduce the chance of users having problems. For the best chance of success, follow the steps as written the first time before exploring on your own. It takes approximately 45 minutes to complete.
 
 
 ### Make sure you understand...
 
-This getting started is for users entirely new to Docker. Users who are non-technical and perhaps just investigating Docker are the target audience.
-
-This getting started uses Docker commands with a terminal window. Docker from
-the command line is supported on all major OS distributions. You don't need to
-be experienced using a command line, but you should be familiar with how to open
-one and type commands.
+This getting started uses Docker commands with a terminal window. You don't need
+to be experienced using a command line, but you should be familiar with how to
+open one and type commands.
 
 Go to [the next page to install](/mac/step_one).
+
 
 
 	
