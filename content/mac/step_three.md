@@ -99,7 +99,7 @@ If you don't already have the Boot2Docker terminal open, open one now:
         moxiegirl/whalesay   latest      fb434121fc77        3 hours ago        247 MB
         hello-world          latest      91c95931e552        5 weeks ago        910 B
     
-    When you run an image in a container, Docker downloads the image your
+    When you run an image in a container, Docker downloads the image to your
     computer. This local copy of the image saves you time.  Docker only
     downloads the image again if the image's source changes on the hub.  You
     can, of course, delete the image yourself. You'll learn more about that
@@ -132,5 +132,5 @@ If you don't already have the Boot2Docker terminal open, open one now:
 On this page, you learned to search for images on Docker Hub. You used your
 command line to run an image. Think about it, effectively you ran a piece of
 Linux software on your Mac computer.  You learned that running an image copies
-it on your computer.  Now, you are ready to create your own image with Docker.
+it to your computer.  Now, you are ready to create your own image with Docker.
 Go on to the next part [to build your own image](/mac/step_four).
